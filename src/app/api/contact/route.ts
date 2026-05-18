@@ -2,8 +2,6 @@ import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import { z } from "zod";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 const schema = z.object({
   fullName: z.string().min(2),
   phone: z.string(),
@@ -35,6 +33,7 @@ const timeLabels: Record<string, string> = {
 };
 
 export async function POST(req: NextRequest) {
+  const resend = new Resend(process.env.RESEND_API_KEY ?? "");
   let body: unknown;
   try {
     body = await req.json();
