@@ -11,11 +11,11 @@ export const metadata: Metadata = {
 const coords = [
   { l: "Téléphone", v: "06 13 31 21 47", sub: "Du lundi au samedi", href: "tel:+33613312147" },
   { l: "Email", v: "amandine.novalien@gmail.com", sub: "Réponse sous 48h", href: "mailto:amandine.novalien@gmail.com" },
-  { l: "Instagram", v: "@nova.lien_", sub: "Coulisses & conseils", href: "https://www.instagram.com/nova.lien_/" },
-  { l: "Facebook", v: "Nova Lien", sub: "Actualités & témoignages", href: "https://www.facebook.com/profile.php?id=61574337772678" },
+  { l: "Instagram", v: "@nova.lien_", sub: "", href: "https://www.instagram.com/nova.lien_/" },
+  { l: "Facebook", v: "Nova Lien", sub: "", href: "https://www.facebook.com/profile.php?id=61574337772678" },
 ];
 
-const villes = ["Dijon", "Chenôve", "Quetigny", "Marsannay-la-Côte", "Talant", "Ahuy", "Fontaine-lès-Dijon", "Gevrey-Chambertin", "Genlis", "Is-sur-Tille", "Saulon-la-Chapelle"];
+const villes = ["Dijon", "Chenôve", "Quetigny", "Marsannay-la-Côte", "Talant", "Ahuy", "Fontaine-lès-Dijon", "Gevrey-Chambertin", "Genlis", "Is-sur-Tille", "Saulon-la-Chapelle", "Sombernon", "Nuits-Saint-Georges", "Selongey", "Mirebeau-sur-Bèze", "Chevigny-Saint-Sauveur"];
 
 export default function ContactPage() {
   return (
@@ -171,7 +171,7 @@ export default function ContactPage() {
                 }}
               >
                 J&apos;interviens dans un rayon d&apos;environ <strong>30&nbsp;km autour de Dijon</strong>.
-                Au-delà, contactez-moi directement : je ferai mon possible pour trouver une solution.
+                Hors zone ? Contacte-moi quand même.
               </p>
               <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 24 }}>
                 {villes.map((c, i) => (
@@ -391,7 +391,7 @@ export default function ContactPage() {
                 letterSpacing: "0.04em",
               }}
             >
-              Amandine Pinto · Éducatrice canine comportementaliste Nova Lien
+              NOVA LIEN · Éducatrice canine comportementaliste · Amandine PINTO
             </div>
           </div>
         </div>

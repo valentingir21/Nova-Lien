@@ -5,11 +5,12 @@ import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
 import CheckIcon from "@/components/ui/CheckIcon";
 import PawPattern from "@/components/ui/PawPattern";
 import PawIcon from "@/components/ui/PawIcon";
+import Meaning from "@/components/sections/home/Meaning";
 
 export const metadata: Metadata = {
   title: "À propos — Amandine Pinto",
   description:
-    "Découvrez le parcours d'Amandine Pinto, éducatrice canine comportementaliste à Dijon. ACACED, diplôme Nature de Chien, méthodes positives.",
+    "Découvrez le parcours d'Amandine Pinto, éducatrice canine comportementaliste à Dijon. ACACED, diplôme Qualiopi, méthodes positives.",
 };
 
 export default function AProposPage() {
@@ -65,7 +66,7 @@ export default function AProposPage() {
                   maxWidth: 520,
                 }}
               >
-                Éducatrice canine comportementaliste dans le secteur de Dijon et ses alentours.
+                <strong>Éducatrice canine comportementaliste – secteur Dijon et ses alentours.</strong>{" "}
                 J&apos;accompagne les dog parents pour transformer les défis du quotidien en moments
                 de complicité et de compréhension mutuelle.
               </p>
@@ -127,7 +128,7 @@ export default function AProposPage() {
                       color: "#7a7f6b",
                     }}
                   >
-                    ACACED · Nature de Chien
+                    ACACED
                   </div>
                 </div>
               </div>
@@ -144,24 +145,43 @@ export default function AProposPage() {
             <h2
               style={{
                 fontFamily: "var(--font-quicksand), system-ui, sans-serif",
-                fontWeight: 600,
-                fontSize: "clamp(40px, 4.5vw, 60px)",
+                fontWeight: 700,
+                fontSize: "clamp(44px, 5vw, 68px)",
                 lineHeight: 1,
                 color: "#1c2018",
-                margin: 0,
+                margin: "0 auto",
                 letterSpacing: "-0.02em",
+                maxWidth: 700,
               }}
             >
               Quatre principes,
               <br />
               <span style={{ color: "#6b7a44" }}>non négociables.</span>
             </h2>
+            <div
+              style={{
+                marginTop: 40,
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <div
+                style={{
+                  width: 280,
+                  borderRadius: 20,
+                  overflow: "hidden",
+                  boxShadow: "0 12px 32px rgba(28,32,24,0.12)",
+                }}
+              >
+                <ImagePlaceholder tone="sage" aspect={1} label="Patte chien & main humaine" />
+              </div>
+            </div>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
             {[
               { t: "Méthodes positives et respectueuses", d: "Aucune coercition, aucune violence — physique ou psychologique. Le respect du chien est non négociable." },
               { t: "Prise en compte des émotions et besoins", d: "Ceux du chien… et du dog parent. On travaille à deux, pas l'un contre l'autre." },
-              { t: "Approche basée sur le comportement canin", d: "Sciences du comportement, observation, lecture du langage canin. Pas de mythes ni de raccourcis." },
+              { t: "Approche basée sur le comportement canin", d: "Sciences du comportement, lecture du langage canin. Ce qui guide mes décisions, c'est la réalité de votre chien — pas les raccourcis ni les idées reçues." },
               { t: "Accompagnement personnalisé", d: "Chaque duo est unique. Chaque programme l'est aussi — pas de recette toute faite." },
             ].map((x, i) => (
               <div
@@ -310,17 +330,21 @@ export default function AProposPage() {
                   letterSpacing: "-0.02em",
                 }}
               >
-                Apprendre à ton chien
+                Que ton chien soit
                 <br />
-                <span style={{ color: "#6b7a44" }}>à se gérer lui-même.</span>
+                <span style={{ color: "#6b7a44" }}>bien dans sa tête.</span>
               </h2>
               <p style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 17, lineHeight: 1.7, color: "#4a4f3f", marginTop: 24, maxWidth: 420 }}>
-                Je ne t&apos;apprendrai pas à contrôler ton chien. Je t&apos;apprendrai à lui
-                apprendre l&apos;autonomie. Et toi en tant que dog parent, je t&apos;accompagne dans
-                l&apos;acquisition des connaissances essentielles pour mieux le comprendre.
+                Qu&apos;il développe une vraie autonomie, qu&apos;il ait confiance en lui, en toi,
+                et en son environnement.
+              </p>
+              <p style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 17, lineHeight: 1.7, color: "#4a4f3f", marginTop: 16, maxWidth: 420 }}>
+                Et toi en tant que dog parent, je t&apos;accompagne dans l&apos;acquisition des
+                connaissances essentielles pour mieux comprendre ton chien, et ne plus jamais te
+                sentir seul(e) face aux situations.
               </p>
               <p style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 17, lineHeight: 1.7, color: "#4a4f3f", marginTop: 16, maxWidth: 420, fontWeight: 600 }}>
-                L&apos;autonomie pour chacun. Un lien encore plus solide entre vous.
+                L&apos;autonomie pour chacun. Un lien entre vous encore plus solide.
               </p>
             </div>
             <div>
@@ -329,7 +353,7 @@ export default function AProposPage() {
               </div>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 24 }}>
                 {[
-                  { t: "Ses autocontrôles", d: "Savoir attendre, se poser, gérer l'excitation." },
+                  { t: "Ses autocontrôles", d: "Pas l'obéissance forcée, mais la capacité réelle à se réguler : gérer l'excitation, tolérer la frustration, faire face à l'imprévu sans paniquer, etc …" },
                   { t: "Sa capacité à rester calme", d: "Dans la maison, en balade, face aux imprévus." },
                   { t: "Son focus & sa confiance", d: "Te choisir comme repère, même dans le bruit." },
                   { t: "Ses bonnes décisions", d: "Faire les bons choix de lui-même, sans consigne." },
@@ -426,8 +450,8 @@ export default function AProposPage() {
             {[
               {
                 y: "2025",
-                t: "Stage pratique avec Valérie",
-                sub: "« De la main à la patte » · Ahuy et alentours",
+                t: "Stage pratique avec Valérie Mouilleseaux-Iches",
+                sub: "« De la main à la patte 21 » · Ahuy et alentours",
                 d: "Une immersion terrain aux côtés d'une professionnelle expérimentée, dans la réalité du métier. Observation, accompagnement de duos, gestion de cas concrets.",
               },
               {
@@ -580,7 +604,9 @@ export default function AProposPage() {
               <p style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 18, lineHeight: 1.7, margin: 0, opacity: 0.95 }}>
                 En France, le métier d&apos;éducateur canin est une{" "}
                 <strong>profession non réglementée</strong>. N&apos;importe qui peut s&apos;en
-                proclamer, sans formation ni diplôme.
+                proclamer, sans formation ni diplôme, mais juste avec l&apos;acquisition de
+                l&apos;ACACED qui n&apos;apprend pas notre cœur de métier, mais autorise le droit
+                d&apos;exercer.
               </p>
               <p style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 17, lineHeight: 1.7, margin: "20px 0 0", opacity: 0.88 }}>
                 C&apos;est une réalité que je trouve importante d&apos;aborder en toute transparence,
@@ -660,7 +686,7 @@ export default function AProposPage() {
                 tone: "cream" as const,
                 summary: "Le premier déclic. Le mal compris.",
                 body: "Au collège, mes parents ont adopté Hasko, un westie… qu'aujourd'hui je définirais de « mal compris ». Très vite, j'ai observé quelque chose que beaucoup de familles vivent sans oser en parler : se sentir dépassé par son chien.",
-                body2: "Les aboiements incessants épuisaient mes parents. Ils ont fait appel à un éducateur, sa solution : un collier électrique. Moi, j'observais Hasko. Je ressentais la fragilité émotionnelle qui s'installait en lui.",
+                body2: "Les aboiements incessants épuisaient mes parents. Ils ont fait appel à un éducateur canin, sa solution : un collier électrique. « Ça ne fait pas si mal, c'est juste pour lui rappeler d'arrêter d'aboyer », disait-il. Ils lui ont fait confiance. Comme on le ferait avec n'importe quel professionnel. Moi, j'observais Hasko. Je ressentais la fragilité émotionnelle qui s'installait en lui. Parce qu'utiliser des outils coercitifs — collier électrique, étrangleurs, laisse lasso… — ont des réelles conséquences sur le chien.",
                 callout: "Respecter la sensibilité du chien, comprendre ses émotions, lui offrir un apprentissage bienveillant : ce n'était pas juste un choix. C'était une nécessité.",
                 callout_label: "Le premier déclic",
               },
@@ -670,7 +696,7 @@ export default function AProposPage() {
                 breed: "Croisée labrador × border collie × husky",
                 tone: "sage" as const,
                 summary: "La deuxième graine. L'empathie pour les dog parents.",
-                body: "À l'âge de 21 ans, Laska entrait dans ma vie. Elle avait 6 ans, lumineuse… et parfois difficile à canaliser. Avec elle, j'ai vécu de l'intérieur ce que vivent tant de dog parents.",
+                body: "À l'âge de 21 ans, Laska entrait dans ma vie. Elle avait 6 ans, lumineuse, et exceptionnelle…. Avec elle, j'ai vécu de l'intérieur ce que vivent tant de dog parents.",
                 body2: "Le rappel qui échoue, les interactions compliquées avec d'autres chiens, les moments où l'on veut sincèrement bien faire… sans savoir comment.",
                 callout: "Avec tout ce qu'on a vécu ensemble, tout ce qu'elle m'a appris… merci pour tout, ma fille. 🐾",
                 callout_label: "À Laska",
@@ -835,6 +861,11 @@ export default function AProposPage() {
                   passais à côté de l&apos;essentiel. Travailler sans sens, sans impact réel…{" "}
                   <strong>J&apos;avais besoin de me sentir profondément utile.</strong>
                 </p>
+                <p style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 17, lineHeight: 1.7, margin: "18px 0 0", opacity: 0.88 }}>
+                  Chaque année en France, des milliers de chiens sont abandonnés. Des dog parents se
+                  sont sentis seuls, dépassés, sans clés pour comprendre et agir. Un comportement mal
+                  compris, une situation qui s&apos;emballe, et tout un lien qui se fragilise…
+                </p>
                 <p
                   style={{
                     fontFamily: "var(--font-lora), Georgia, serif",
@@ -860,107 +891,7 @@ export default function AProposPage() {
       </section>
 
       {/* POURQUOI NOVA LIEN */}
-      <section style={{ padding: "120px 56px", background: "#f1ecdc" }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-          <div style={{ textAlign: "center", marginBottom: 56 }}>
-            <Eyebrow>Pourquoi Nova Lien ?</Eyebrow>
-            <h2
-              style={{
-                fontFamily: "var(--font-quicksand), system-ui, sans-serif",
-                fontWeight: 600,
-                fontSize: "clamp(48px, 5.5vw, 72px)",
-                lineHeight: 1,
-                color: "#1c2018",
-                margin: 0,
-                letterSpacing: "-0.02em",
-              }}
-            >
-              Bien plus qu&apos;un nom.
-              <br />
-              <span
-                style={{
-                  color: "#6b7a44",
-                  fontFamily: "var(--font-lora), Georgia, serif",
-                  fontStyle: "italic",
-                  fontWeight: 500,
-                }}
-              >
-                Une vision.
-              </span>
-            </h2>
-          </div>
-
-          <div
-            style={{
-              background: "#8f9e63",
-              color: "#fbfaf4",
-              borderRadius: 32,
-              padding: "64px 56px",
-              textAlign: "center",
-              position: "relative",
-              overflow: "hidden",
-              marginBottom: 32,
-            }}
-          >
-            <PawPattern color="rgba(255,255,255,0.06)" density={0.4} />
-            <div style={{ position: "relative" }}>
-              <div style={{ display: "inline-flex", alignItems: "baseline", gap: 28, justifyContent: "center", flexWrap: "wrap" }}>
-                <div>
-                  <div style={{ fontFamily: "var(--font-quicksand), system-ui, sans-serif", fontWeight: 700, fontSize: "clamp(72px, 9vw, 120px)", lineHeight: 1, letterSpacing: "-0.03em" }}>Nova</div>
-                  <div style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 13, opacity: 0.85, marginTop: 6, letterSpacing: "0.08em", textTransform: "uppercase", fontWeight: 600 }}>du latin · « nouveau »</div>
-                </div>
-                <div style={{ fontFamily: "var(--font-quicksand), system-ui, sans-serif", fontStyle: "italic", fontSize: 72, opacity: 0.5, fontWeight: 400, lineHeight: 1 }}>&amp;</div>
-                <div>
-                  <div style={{ fontFamily: "var(--font-quicksand), system-ui, sans-serif", fontWeight: 700, fontSize: "clamp(72px, 9vw, 120px)", lineHeight: 1, letterSpacing: "-0.03em", color: "#ebe2c8" }}>Lien</div>
-                  <div style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 13, opacity: 0.85, marginTop: 6, letterSpacing: "0.08em", textTransform: "uppercase", fontWeight: 600 }}>relation · connexion</div>
-                </div>
-              </div>
-              <p style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 18, lineHeight: 1.7, maxWidth: 720, margin: "36px auto 0", opacity: 0.95 }}>
-                En astronomie, une <strong>nova</strong> désigne une étoile qui s&apos;illumine
-                soudainement, avant de retrouver progressivement son éclat initial. Un symbole de{" "}
-                <em>renouveau, de révélation, de renaissance</em>.
-              </p>
-            </div>
-          </div>
-
-          <div style={{ background: "#ffffff", border: "1px solid #e8e4d4", borderRadius: 28, padding: "48px 56px" }}>
-            <p style={{ fontFamily: "var(--font-lora), Georgia, serif", fontStyle: "italic", fontSize: 24, lineHeight: 1.5, color: "#1c2018", margin: 0, fontWeight: 500, textAlign: "center", maxWidth: 800, marginLeft: "auto", marginRight: "auto" }}>
-              Ce n&apos;est pas seulement un métier pour moi.{" "}
-              <strong style={{ fontStyle: "normal", fontWeight: 700, color: "#6b7a44" }}>
-                C&apos;est un engagement.
-              </strong>
-            </p>
-            <div style={{ height: 1, width: 80, background: "#e8e4d4", margin: "32px auto" }} />
-            <p style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 17, lineHeight: 1.8, color: "#4a4f3f", margin: "0 auto", maxWidth: 740 }}>
-              Celui d&apos;offrir bien-être et harmonie aux chiens et aux humains qui les aiment. De
-              créer des relations fondées sur le respect, la compréhension et la confiance mutuelle.
-              <strong> Mon objectif reste le même</strong> : accompagner avec bienveillance, respect
-              et efficacité.
-            </p>
-          </div>
-
-          <div style={{ marginTop: 48 }}>
-            <div style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 12, color: "#6b7a44", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: 20, textAlign: "center" }}>
-              Nova Lien, c&apos;est la promesse d&apos;un renouveau&nbsp;:
-            </div>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 16 }}>
-              {[
-                { t: "Pour les dog parents", d: "qui construisent un quotidien serein et épanoui avec leur chien." },
-                { t: "Pour les chiens", d: "qui s'épanouissent dans le respect de leurs besoins et de leurs émotions." },
-                { t: "Pour la société", d: "qui gagne en conscience face au bien-être animal — et contribue à réduire les abandons évitables." },
-              ].map((x, i) => (
-                <div key={i} style={{ background: "#ffffff", border: "1px solid #e8e4d4", borderRadius: 20, padding: "24px 26px" }}>
-                  <div style={{ width: 36, height: 36, borderRadius: 10, background: "#dde2ce", color: "#6b7a44", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
-                    <PawIcon size={20} color="#6b7a44" />
-                  </div>
-                  <h3 style={{ fontFamily: "var(--font-quicksand), system-ui, sans-serif", fontWeight: 600, fontSize: 19, margin: 0, color: "#1c2018", lineHeight: 1.2 }}>{x.t}</h3>
-                  <p style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 14, lineHeight: 1.6, color: "#4a4f3f", margin: "8px 0 0" }}>{x.d}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <Meaning />
 
       {/* CTA */}
       <section style={{ padding: "110px 56px", background: "#fbfaf4" }}>

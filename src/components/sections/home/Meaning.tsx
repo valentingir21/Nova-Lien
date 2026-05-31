@@ -52,18 +52,6 @@ export default function Meaning() {
               du latin · « nouveau »
             </div>
           </div>
-          <div
-            style={{
-              fontFamily: "var(--font-quicksand), system-ui, sans-serif",
-              fontStyle: "italic",
-              fontSize: "clamp(48px, 6vw, 84px)",
-              color: "rgba(255,255,255,0.5)",
-              fontWeight: 400,
-              lineHeight: 1,
-            }}
-          >
-            &amp;
-          </div>
           <div>
             <div
               style={{
@@ -98,12 +86,12 @@ export default function Meaning() {
             fontSize: 20,
             lineHeight: 1.7,
             color: "rgba(255,255,255,0.95)",
-            maxWidth: 760,
+            maxWidth: 980,
             margin: "0 auto",
           }}
         >
           En astronomie, une{" "}
-          <strong style={{ fontWeight: 700, color: "#fbfaf4" }}>nova</strong> désigne une étoile
+          <strong style={{ fontWeight: 700, color: "#fbfaf4" }}>nova</strong>{" "}désigne une étoile
           qui s&apos;illumine soudainement avant de retrouver progressivement son éclat. Un symbole
           de{" "}
           <em style={{ fontStyle: "italic" }}>renouveau, de révélation, de renaissance</em>.

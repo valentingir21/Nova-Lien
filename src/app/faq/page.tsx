@@ -134,8 +134,11 @@ function SeligmanAnswer() {
 
           <div style={{ marginTop: 16, padding: "20px 22px", background: "rgba(255,255,255,0.1)", borderRadius: 16 }}>
             <div style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", opacity: 0.85, marginBottom: 14 }}>
-              Étape 2 — Résultat en cage à deux compartiments
+              Étape 2 — Résultat
             </div>
+            <p style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 14, lineHeight: 1.65, opacity: 0.95, marginBottom: 14 }}>
+              Les deux groupes sont placés dans une cage divisée en deux compartiments par un muret : d&apos;un côté le sol est électrifié, de l&apos;autre non. Il suffit de franchir le muret pour échapper aux décharges.
+            </p>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
               <div style={{ padding: "14px 16px", background: "rgba(255,255,255,0.1)", borderRadius: 12 }}>
                 <div style={{ fontFamily: "var(--font-quicksand), system-ui, sans-serif", fontWeight: 600, fontSize: 15, marginBottom: 4 }}>Groupe 2</div>
@@ -160,12 +163,15 @@ function SeligmanAnswer() {
               La résignation acquise
             </h5>
             <p style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 14.5, lineHeight: 1.65, color: "#4a4f3f", margin: "10px 0 0" }}>
-              Un état psychologique profond dans lequel l&apos;individu abandonne toute tentative
-              d&apos;agir sur son environnement — même lorsque la situation change et qu&apos;une issue
-              devient possible.
+              Également connue sous le terme d&apos;<strong>impuissance</strong> ou{" "}
+              <strong>détresse acquise</strong> : c&apos;est un état psychologique profond dans lequel
+              l&apos;individu abandonne toute tentative d&apos;agir sur son environnement. Chez le
+              chien comme chez l&apos;humain.
             </p>
             <p style={{ fontFamily: "var(--font-lora), Georgia, serif", fontStyle: "italic", fontSize: 16, color: "#6b7a44", margin: "14px 0 0", fontWeight: 500 }}>
-              Chez le chien comme chez l&apos;humain.
+              Pensez-vous toujours que « dominer » son chien est la meilleure solution ? Un chien qui
+              vous obéit par peur n&apos;est pas un chien éduqué. C&apos;est un chien qui souffre en
+              silence.
             </p>
           </div>
         </div>

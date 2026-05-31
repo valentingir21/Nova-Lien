@@ -4,12 +4,12 @@ import CheckIcon from "@/components/ui/CheckIcon";
 const lieux = [
   { l: "À votre domicile", d: "Travailler dans l'environnement du quotidien" },
   { l: "En extérieur", d: "Nature, ville, balades structurées" },
-  { l: "Sur terrain clôturé", d: 'Ahuy — terrain partenaire « De la main à la patte »' },
+  { l: "Sur terrain clôturé privé", d: 'Ahuy – terrain partenaire « De la main à la patte 21 »' },
 ];
 
 export default function HowItWorks() {
   return (
-    <section style={{ padding: "120px 56px", background: "#fbfaf4" }}>
+    <section style={{ padding: "120px 56px", background: "#f1ecdc" }}>
       <div style={{ maxWidth: 1240, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 64 }}>
           <Eyebrow>Le déroulé</Eyebrow>

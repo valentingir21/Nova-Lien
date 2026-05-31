@@ -1,10 +1,9 @@
 import Link from "next/link";
-import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
-import PawIcon from "@/components/ui/PawIcon";
+import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section style={{ padding: "70px 56px 100px", background: "#fbfaf4" }}>
+    <section className="hero-section" style={{ padding: "36px 56px 56px", background: "#fbfaf4" }}>
       <div style={{ maxWidth: 1240, margin: "0 auto" }}>
         {/* Badge */}
         <div
@@ -31,26 +30,27 @@ export default function Hero() {
           style={{
             fontFamily: "var(--font-quicksand), system-ui, sans-serif",
             fontWeight: 600,
-            fontSize: "clamp(64px, 8vw, 116px)",
-            lineHeight: 0.94,
-            margin: "32px 0 0",
+            fontSize: "clamp(44px, 5.5vw, 76px)",
+            lineHeight: 0.96,
+            margin: "20px 0 0",
             color: "#1c2018",
             letterSpacing: "-0.03em",
             maxWidth: 1100,
           }}
         >
-          Comprendre ton chien.
+          Comprendre votre chien.
           <br />
           <span style={{ color: "#6b7a44" }}>Renforcer votre lien.</span>
         </h1>
 
         {/* Grid */}
         <div
+          className="hero-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "1.4fr 1fr",
-            gap: 64,
-            marginTop: 56,
+            gap: 48,
+            marginTop: 32,
             alignItems: "flex-end",
           }}
         >
@@ -58,64 +58,21 @@ export default function Hero() {
           <div style={{ position: "relative" }}>
             <div
               style={{
+                position: "relative",
+                width: "100%",
+                paddingBottom: "68%",
                 borderRadius: 28,
                 overflow: "hidden",
                 boxShadow: "0 30px 80px rgba(28,32,24,0.18)",
               }}
             >
-              <ImagePlaceholder tone="sage" aspect={0.58} label="Amandine + chien" />
-            </div>
-            {/* Floating badge */}
-            <div
-              style={{
-                position: "absolute",
-                bottom: 24,
-                left: 24,
-                background: "rgba(255,255,255,0.92)",
-                backdropFilter: "blur(8px)",
-                padding: "14px 18px",
-                borderRadius: 20,
-                display: "flex",
-                gap: 14,
-                alignItems: "center",
-                boxShadow: "0 12px 28px rgba(0,0,0,0.12)",
-              }}
-            >
-              <div
-                style={{
-                  width: 40,
-                  height: 40,
-                  borderRadius: "50%",
-                  background: "#dde2ce",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  flexShrink: 0,
-                }}
-              >
-                <PawIcon size={22} color="#6b7a44" />
-              </div>
-              <div>
-                <div
-                  style={{
-                    fontFamily: "var(--font-quicksand), system-ui, sans-serif",
-                    fontWeight: 600,
-                    fontSize: 15,
-                    color: "#1c2018",
-                  }}
-                >
-                  Méthodes positives
-                </div>
-                <div
-                  style={{
-                    fontFamily: "var(--font-manrope), system-ui, sans-serif",
-                    fontSize: 12,
-                    color: "#7a7f6b",
-                  }}
-                >
-                  Respect des émotions · zéro coercition
-                </div>
-              </div>
+              <Image
+                src="/photo-accueil.jpg"
+                alt="Amandine avec son chien"
+                fill
+                style={{ objectFit: "cover", objectPosition: "center 55%" }}
+                priority
+              />
             </div>
           </div>
 
@@ -138,7 +95,7 @@ export default function Hero() {
               compréhension mutuelle.
             </p>
 
-            <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+            <div className="hero-actions" style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
               <Link
                 href="/contact"
                 style={{
@@ -190,9 +147,41 @@ export default function Hero() {
               >
                 Découvrir mes prestations
               </Link>
+              <Link
+                href="/a-propos"
+                style={{
+                  background: "#ffffff",
+                  color: "#1c2018",
+                  fontFamily: "var(--font-manrope), system-ui, sans-serif",
+                  fontWeight: 600,
+                  fontSize: 15,
+                  border: "1px solid #e8e4d4",
+                  padding: "16px 22px",
+                  borderRadius: 999,
+                  textDecoration: "none",
+                }}
+              >
+                Qui suis-je
+              </Link>
+              <Link
+                href="/faq"
+                style={{
+                  background: "#ffffff",
+                  color: "#1c2018",
+                  fontFamily: "var(--font-manrope), system-ui, sans-serif",
+                  fontWeight: 600,
+                  fontSize: 15,
+                  border: "1px solid #e8e4d4",
+                  padding: "16px 22px",
+                  borderRadius: 999,
+                  textDecoration: "none",
+                }}
+              >
+                FAQ
+              </Link>
             </div>
 
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginTop: 8 }}>
+            <div className="hero-stats" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginTop: 8 }}>
               {[
                 { n: "ACACED", l: "Attestation officielle" },
                 { n: "Nature de chien", l: "Diplôme méthodes positives" },

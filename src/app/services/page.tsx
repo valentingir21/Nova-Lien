@@ -4,6 +4,7 @@ import Eyebrow from "@/components/ui/Eyebrow";
 import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
 import CheckIcon from "@/components/ui/CheckIcon";
 import PawPattern from "@/components/ui/PawPattern";
+import HowItWorks from "@/components/sections/home/HowItWorks";
 
 export const metadata: Metadata = {
   title: "Services — Les 4 prestations",
@@ -21,14 +22,10 @@ const services = [
     bullets: [
       "Comprendre le comportement et les besoins de votre chiot",
       "Poser des règles de vie claires et bienveillantes",
-      "Gérer les premières situations : morsures, propreté, sociabilisation, rappel",
+      "Gérer les premières situations : morsures, propreté, sociabilisation, rappel, …",
       "Construire une relation de confiance dès le départ",
     ],
     how: "Tout commence par un bilan comportemental à votre domicile, suivi de séances adaptées à l'âge et à l'évolution de votre chiot.",
-    option: {
-      label: "Option support pédagogique",
-      text: "Un guide évolutif semaine après semaine, mois après mois, pour vous accompagner entre les séances.",
-    },
     tone: "sage" as const,
   },
   {
@@ -48,7 +45,7 @@ const services = [
   },
   {
     n: "03",
-    tag: "Cas complexes",
+    tag: "Réeducation",
     title: "Rééducation comportementale",
     hook: "Un comportement difficile à gérer au quotidien ?",
     intro: "Réactivité, agressivité, peurs, destructions, aboiements, fugues, anxiété de séparation, protection de ressources…",
@@ -166,8 +163,8 @@ export default function ServicesPage() {
               >
                 ↓ Voir les 4 prestations
               </a>
-              <Link
-                href="/tarifs"
+              <a
+                href="#tarifs"
                 style={{
                   background: "#ffffff",
                   color: "#1c2018",
@@ -181,7 +178,7 @@ export default function ServicesPage() {
                 }}
               >
                 Voir les tarifs
-              </Link>
+              </a>
             </div>
           </div>
         </div>
@@ -332,6 +329,8 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+
+      <HowItWorks />
 
       {/* PRESTATIONS */}
       <section id="prestations" style={{ padding: "0 56px 60px", background: "#fbfaf4" }}>
@@ -531,62 +530,6 @@ export default function ServicesPage() {
                   </p>
                 </div>
 
-                {s.option && (
-                  <div
-                    style={{
-                      background: "#c9b78f33",
-                      border: "1px dashed #c9b78f",
-                      borderRadius: 18,
-                      padding: "20px 24px",
-                    }}
-                  >
-                    <div style={{ display: "flex", gap: 12, alignItems: "flex-start" }}>
-                      <div
-                        style={{
-                          width: 28,
-                          height: 28,
-                          borderRadius: 8,
-                          background: "#c9b78f",
-                          color: "#1c2018",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          fontFamily: "var(--font-quicksand), system-ui, sans-serif",
-                          fontWeight: 700,
-                          fontSize: 14,
-                          flexShrink: 0,
-                        }}
-                      >
-                        +
-                      </div>
-                      <div>
-                        <div
-                          style={{
-                            fontFamily: "var(--font-manrope), system-ui, sans-serif",
-                            fontSize: 11,
-                            color: "#4a4f3f",
-                            fontWeight: 700,
-                            letterSpacing: "0.12em",
-                            textTransform: "uppercase",
-                          }}
-                        >
-                          {s.option.label}
-                        </div>
-                        <div
-                          style={{
-                            fontFamily: "var(--font-manrope), system-ui, sans-serif",
-                            fontSize: 14,
-                            lineHeight: 1.6,
-                            color: "#4a4f3f",
-                            marginTop: 4,
-                          }}
-                        >
-                          {s.option.text}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                )}
 
                 <Link
                   href="/contact"
@@ -668,7 +611,7 @@ export default function ServicesPage() {
             {[
               { n: "01", t: "À votre domicile", d: "Pour travailler directement dans l'environnement du quotidien de votre chien. C'est là que naissent et se résolvent la plupart des situations." },
               { n: "02", t: "En extérieur", d: "En nature, en ville, sur des parcours structurés. Pour travailler la marche en laisse, le rappel, les croisements, la gestion de l'environnement." },
-              { n: "03", t: "Sur terrain clôturé", d: "Situé à Ahuy (40 Rue du Puits de Bois, 21121), sur le terrain professionnel de Valérie, éducatrice canine « De la main à la patte », avec qui je travaille en collaboration." },
+              { n: "03", t: "Sur terrain clôturé privé", d: "Situé à Ahuy (40 Rue du Puits de Bois, 21121), sur le terrain professionnel de Valérie, éducatrice canine « De la main à la patte 21 », avec qui je travaille en collaboration." },
             ].map((x, i) => (
               <div
                 key={i}
@@ -748,10 +691,10 @@ export default function ServicesPage() {
               <strong style={{ color: "#1c2018" }}>
                 Tarif séance de suivi&nbsp;: 50&nbsp;€ / heure
               </strong>{" "}
-              · Forfaits dégressifs disponibles, paiement échelonnable.
+              · Paiement échelonnable disponible.
             </div>
-            <Link
-              href="/tarifs"
+            <a
+              href="#tarifs"
               style={{
                 fontFamily: "var(--font-manrope), system-ui, sans-serif",
                 fontWeight: 600,
@@ -763,8 +706,466 @@ export default function ServicesPage() {
                 whiteSpace: "nowrap",
               }}
             >
-              Voir tous les tarifs &amp; forfaits →
-            </Link>
+              Voir les tarifs & forfaits ↓
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* TARIFS */}
+      <section id="tarifs" style={{ padding: "110px 56px 60px", background: "#fbfaf4" }}>
+        <div style={{ maxWidth: 1240, margin: "0 auto" }}>
+          <div style={{ textAlign: "center", marginBottom: 48 }}>
+            <Eyebrow>Tarifs</Eyebrow>
+            <h2
+              style={{
+                fontFamily: "var(--font-quicksand), system-ui, sans-serif",
+                fontWeight: 600,
+                fontSize: "clamp(40px, 4.5vw, 56px)",
+                lineHeight: 1,
+                color: "#1c2018",
+                margin: 0,
+                letterSpacing: "-0.02em",
+              }}
+            >
+              Des tarifs clairs,
+              <br />
+              <span style={{ color: "#6b7a44" }}>pour avancer sereinement.</span>
+            </h2>
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
+            {/* Bilan */}
+            <div
+              style={{
+                background: "#8f9e63",
+                color: "#fbfaf4",
+                borderRadius: 28,
+                padding: "40px 44px",
+                position: "relative",
+                overflow: "hidden",
+              }}
+            >
+              <div
+                style={{
+                  display: "inline-flex",
+                  padding: "6px 14px",
+                  borderRadius: 999,
+                  background: "rgba(255,255,255,0.15)",
+                  border: "1px solid rgba(255,255,255,0.2)",
+                  fontFamily: "var(--font-manrope), system-ui, sans-serif",
+                  fontSize: 11,
+                  fontWeight: 700,
+                  letterSpacing: "0.12em",
+                  textTransform: "uppercase",
+                  marginBottom: 16,
+                }}
+              >
+                Point de départ obligatoire
+              </div>
+              <h3
+                style={{
+                  fontFamily: "var(--font-quicksand), system-ui, sans-serif",
+                  fontWeight: 600,
+                  fontSize: 38,
+                  margin: 0,
+                  lineHeight: 1.05,
+                }}
+              >
+                Bilan comportemental
+              </h3>
+              <div style={{ display: "flex", alignItems: "baseline", gap: 8, marginTop: 24 }}>
+                <div
+                  style={{
+                    fontFamily: "var(--font-quicksand), system-ui, sans-serif",
+                    fontWeight: 700,
+                    fontSize: 72,
+                    lineHeight: 1,
+                    letterSpacing: "-0.02em",
+                  }}
+                >
+                  50
+                </div>
+                <div
+                  style={{
+                    fontFamily: "var(--font-quicksand), system-ui, sans-serif",
+                    fontWeight: 600,
+                    fontSize: 24,
+                    opacity: 0.85,
+                  }}
+                >
+                  €
+                </div>
+              </div>
+              <p
+                style={{
+                  fontFamily: "var(--font-manrope), system-ui, sans-serif",
+                  fontSize: 15,
+                  lineHeight: 1.65,
+                  opacity: 0.92,
+                  marginTop: 16,
+                  maxWidth: 380,
+                }}
+              >
+                Environ 1h à votre domicile · réglé le jour du rendez-vous. Échange en profondeur sur
+                votre chien, votre quotidien, vos objectifs.
+              </p>
+            </div>
+
+            {/* Séance */}
+            <div
+              style={{
+                background: "#ffffff",
+                border: "1px solid #e8e4d4",
+                borderRadius: 28,
+                padding: "40px 44px",
+              }}
+            >
+              <div
+                style={{
+                  display: "inline-flex",
+                  padding: "6px 14px",
+                  borderRadius: 999,
+                  background: "#dde2ce",
+                  fontFamily: "var(--font-manrope), system-ui, sans-serif",
+                  fontSize: 11,
+                  fontWeight: 700,
+                  color: "#6b7a44",
+                  letterSpacing: "0.12em",
+                  textTransform: "uppercase",
+                  marginBottom: 16,
+                }}
+              >
+                Suivi personnalisé
+              </div>
+              <h3
+                style={{
+                  fontFamily: "var(--font-quicksand), system-ui, sans-serif",
+                  fontWeight: 600,
+                  fontSize: 38,
+                  margin: 0,
+                  lineHeight: 1.05,
+                  color: "#1c2018",
+                }}
+              >
+                Séance de suivi
+              </h3>
+              <div style={{ display: "flex", alignItems: "baseline", gap: 8, marginTop: 24 }}>
+                <div
+                  style={{
+                    fontFamily: "var(--font-quicksand), system-ui, sans-serif",
+                    fontWeight: 700,
+                    fontSize: 72,
+                    lineHeight: 1,
+                    color: "#1c2018",
+                    letterSpacing: "-0.02em",
+                  }}
+                >
+                  50
+                </div>
+                <div
+                  style={{
+                    fontFamily: "var(--font-quicksand), system-ui, sans-serif",
+                    fontWeight: 600,
+                    fontSize: 24,
+                    color: "#7a7f6b",
+                  }}
+                >
+                  € / heure
+                </div>
+              </div>
+              <p
+                style={{
+                  fontFamily: "var(--font-manrope), system-ui, sans-serif",
+                  fontSize: 15,
+                  lineHeight: 1.65,
+                  color: "#4a4f3f",
+                  marginTop: 16,
+                  maxWidth: 380,
+                }}
+              >
+                Au rythme adapté à votre situation. Lieu de travail ajusté selon la problématique :
+                domicile, extérieur, ou terrain clôturé privé.
+              </p>
+              <div
+                style={{
+                  marginTop: 20,
+                  padding: "12px 16px",
+                  background: "#f7f2e3",
+                  borderRadius: 12,
+                  fontFamily: "var(--font-manrope), system-ui, sans-serif",
+                  fontSize: 13,
+                  color: "#4a4f3f",
+                }}
+              >
+                <strong style={{ color: "#1c2018" }}>Forfaits disponibles</strong> — voir ci-dessous.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FORFAITS */}
+      <section style={{ padding: "80px 56px", background: "#f1ecdc" }}>
+        <div style={{ maxWidth: 1240, margin: "0 auto" }}>
+          <div style={{ textAlign: "center", marginBottom: 56 }}>
+            <Eyebrow>Forfaits</Eyebrow>
+            <h2
+              style={{
+                fontFamily: "var(--font-quicksand), system-ui, sans-serif",
+                fontWeight: 600,
+                fontSize: "clamp(40px, 4.5vw, 56px)",
+                lineHeight: 1,
+                color: "#1c2018",
+                margin: 0,
+                letterSpacing: "-0.02em",
+              }}
+            >
+              Plus on chemine,
+              <br />
+              <span
+                style={{
+                  color: "#6b7a44",
+                  fontFamily: "var(--font-lora), Georgia, serif",
+                  fontStyle: "italic",
+                  fontWeight: 500,
+                }}
+              >
+                plus c&apos;est doux.
+              </span>
+            </h2>
+            <p
+              style={{
+                fontFamily: "var(--font-manrope), system-ui, sans-serif",
+                fontSize: 16,
+                lineHeight: 1.65,
+                color: "#4a4f3f",
+                maxWidth: 640,
+                margin: "24px auto 0",
+              }}
+            >
+              Chaque séance est à 50&nbsp;€ de l&apos;heure. Paiement en une fois ou échelonné selon
+              ce qui vous convient.
+            </p>
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", gap: 20, alignItems: "stretch" }}>
+            {[
+              { name: "Découverte", sessions: 3, pop: false, desc: "Pour démarrer ou traiter une problématique ciblée." },
+              { name: "Accompagnement", sessions: 5, pop: true, desc: "Le plus choisi — pour un travail de fond, structuré et progressif." },
+              { name: "Sérénité", sessions: 8, pop: false, desc: "Pour un suivi complet et progressif dans la durée." },
+              { name: "Approfondi", sessions: 10, pop: false, desc: "Pour les cas complexes ou un suivi long terme (chiot, rééducation)." },
+            ].map((f, i) => (
+              <div
+                key={i}
+                style={{
+                  background: f.pop ? "#8f9e63" : "#ffffff",
+                  color: f.pop ? "#fbfaf4" : "#1c2018",
+                  border: f.pop ? "none" : "1px solid #e8e4d4",
+                  borderRadius: 28,
+                  padding: "36px 28px",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 16,
+                  position: "relative",
+                  boxShadow: f.pop ? "0 24px 60px rgba(28,32,24,0.18)" : "none",
+                  transform: f.pop ? "scale(1.02)" : "none",
+                }}
+              >
+                {f.pop && (
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: -12,
+                      left: "50%",
+                      transform: "translateX(-50%)",
+                      background: "#fbfaf4",
+                      color: "#6b7a44",
+                      padding: "6px 14px",
+                      borderRadius: 999,
+                      fontFamily: "var(--font-manrope), system-ui, sans-serif",
+                      fontSize: 11,
+                      fontWeight: 700,
+                      letterSpacing: "0.12em",
+                      textTransform: "uppercase",
+                      border: "1px solid #e8e4d4",
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    Le + choisi ★
+                  </div>
+                )}
+                <div>
+                  <div
+                    style={{
+                      fontFamily: "var(--font-manrope), system-ui, sans-serif",
+                      fontSize: 11,
+                      fontWeight: 700,
+                      letterSpacing: "0.14em",
+                      textTransform: "uppercase",
+                      color: f.pop ? "rgba(255,255,255,0.8)" : "#6b7a44",
+                      marginBottom: 6,
+                    }}
+                  >
+                    Forfait
+                  </div>
+                  <h3
+                    style={{
+                      fontFamily: "var(--font-quicksand), system-ui, sans-serif",
+                      fontWeight: 600,
+                      fontSize: 26,
+                      margin: 0,
+                      color: f.pop ? "#fbfaf4" : "#1c2018",
+                      lineHeight: 1.1,
+                    }}
+                  >
+                    {f.name}
+                  </h3>
+                  <div
+                    style={{
+                      fontFamily: "var(--font-manrope), system-ui, sans-serif",
+                      fontSize: 14,
+                      marginTop: 4,
+                      color: f.pop ? "rgba(255,255,255,0.85)" : "#7a7f6b",
+                    }}
+                  >
+                    {f.sessions} séances
+                  </div>
+                </div>
+                <div>
+                  <div style={{ display: "flex", alignItems: "baseline", gap: 6 }}>
+                    <div
+                      style={{
+                        fontFamily: "var(--font-quicksand), system-ui, sans-serif",
+                        fontWeight: 700,
+                        fontSize: 48,
+                        lineHeight: 1,
+                        letterSpacing: "-0.02em",
+                      }}
+                    >
+                      {f.sessions * 50}
+                    </div>
+                    <div
+                      style={{
+                        fontFamily: "var(--font-quicksand), system-ui, sans-serif",
+                        fontWeight: 600,
+                        fontSize: 20,
+                        opacity: 0.85,
+                      }}
+                    >
+                      €
+                    </div>
+                  </div>
+                  <div
+                    style={{
+                      fontFamily: "var(--font-manrope), system-ui, sans-serif",
+                      fontSize: 12,
+                      marginTop: 4,
+                      color: f.pop ? "rgba(255,255,255,0.8)" : "#7a7f6b",
+                    }}
+                  >
+                    {f.sessions} × 50&nbsp;€ / séance
+                  </div>
+                </div>
+                <p
+                  style={{
+                    fontFamily: "var(--font-manrope), system-ui, sans-serif",
+                    fontSize: 14,
+                    lineHeight: 1.6,
+                    margin: 0,
+                    color: f.pop ? "rgba(255,255,255,0.92)" : "#4a4f3f",
+                    flex: 1,
+                  }}
+                >
+                  {f.desc}
+                </p>
+                <Link
+                  href="/contact"
+                  style={{
+                    marginTop: "auto",
+                    background: f.pop ? "#fbfaf4" : "#1c2018",
+                    color: f.pop ? "#1c2018" : "#fbfaf4",
+                    fontFamily: "var(--font-manrope), system-ui, sans-serif",
+                    fontWeight: 600,
+                    fontSize: 14,
+                    padding: "13px 18px",
+                    borderRadius: 999,
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    textDecoration: "none",
+                  }}
+                >
+                  <span>Choisir ce forfait</span>
+                  <span>→</span>
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* MODALITES */}
+      <section style={{ padding: "80px 56px", background: "#fbfaf4" }}>
+        <div style={{ maxWidth: 1240, margin: "0 auto" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1.2fr", gap: 72, alignItems: "flex-start" }}>
+            <div>
+              <Eyebrow>Modalités</Eyebrow>
+              <h2
+                style={{
+                  fontFamily: "var(--font-quicksand), system-ui, sans-serif",
+                  fontWeight: 600,
+                  fontSize: "clamp(36px, 4vw, 52px)",
+                  lineHeight: 1,
+                  color: "#1c2018",
+                  margin: 0,
+                  letterSpacing: "-0.02em",
+                }}
+              >
+                Une approche
+                <br />
+                <span style={{ color: "#6b7a44" }}>souple et claire.</span>
+              </h2>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+              {[
+                { t: "Paiement", d: "Forfait réglable en une fois ou échelonné en plusieurs mensualités." },
+                { t: "Frais de déplacement", d: "Inclus dans le tarif pour Dijon et ses alentours (rayon de 30 km). Au-delà, un supplément peut s'appliquer — on en parle au moment du bilan." },
+                { t: "Moyens de paiement", d: "Espèces ou virement bancaire. Reçu fourni sur demande." },
+                { t: "Annulation", d: "Possible jusqu'à 24h avant la séance, sans frais. Au-delà, la séance est due." },
+              ].map((x, i) => (
+                <div
+                  key={i}
+                  style={{
+                    background: "#ffffff",
+                    border: "1px solid #e8e4d4",
+                    borderRadius: 18,
+                    padding: "20px 24px",
+                  }}
+                >
+                  <h3
+                    style={{
+                      fontFamily: "var(--font-quicksand), system-ui, sans-serif",
+                      fontWeight: 600,
+                      fontSize: 18,
+                      margin: 0,
+                      color: "#1c2018",
+                    }}
+                  >
+                    {x.t}
+                  </h3>
+                  <p
+                    style={{
+                      fontFamily: "var(--font-manrope), system-ui, sans-serif",
+                      fontSize: 14.5,
+                      lineHeight: 1.65,
+                      color: "#4a4f3f",
+                      margin: "6px 0 0",
+                    }}
+                  >
+                    {x.d}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

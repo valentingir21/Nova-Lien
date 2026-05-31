@@ -48,3 +48,63 @@ a {
 button {
   cursor: pointer;
 }
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+
+  /* Nav */
+  .sitenav { padding: 14px 20px !important; }
+  .sitenav-links { display: none !important; }
+  .sitenav-cta { display: none !important; }
+  .sitenav-tagline { display: none !important; }
+  .sitenav-hamburger { display: flex !important; }
+
+  /* Hero */
+  .hero-section { padding: 20px 20px 40px !important; }
+  .hero-grid { grid-template-columns: 1fr !important; gap: 28px !important; }
+  .hero-actions { flex-direction: column !important; }
+  .hero-actions a { justify-content: center !important; }
+
+  /* Vision */
+  .vision-section { padding: 56px 20px !important; }
+  .vision-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+  .vision-left { position: static !important; }
+
+  /* Emotional */
+  .emotional-section { padding: 56px 20px !important; }
+  .emotional-header { grid-template-columns: 1fr !important; gap: 20px !important; }
+  .emotional-tags { grid-template-columns: 1fr 1fr !important; }
+  .emotional-list { grid-template-columns: 1fr !important; }
+  .emotional-left-col { padding-right: 0 !important; }
+  .emotional-right-col { padding-left: 0 !important; border-left: none !important; border-top: none !important; }
+
+  /* Method */
+  .method-section { padding: 56px 20px !important; }
+  .method-grid { grid-template-columns: 1fr 1fr !important; border-radius: 20px !important; }
+  .method-title { font-size: clamp(32px, 8vw, 48px) !important; }
+
+  /* Services */
+  .services-section { padding: 56px 20px !important; }
+  .services-header { flex-direction: column !important; align-items: flex-start !important; gap: 16px !important; }
+  .services-cards { grid-template-columns: 1fr !important; }
+  .services-cta-banner { flex-direction: column !important; text-align: center !important; align-items: stretch !important; }
+  .services-cta-banner a { text-align: center !important; }
+
+  /* Contact */
+  .contact-section { padding: 40px 20px !important; }
+  .contact-card { grid-template-columns: 1fr !important; gap: 24px !important; padding: 28px 20px !important; border-radius: 24px !important; }
+  .contact-map-wrapper { height: 280px !important; flex: none !important; }
+
+  /* Footer */
+  .footer-section { padding: 48px 20px 24px !important; }
+  .footer-slogan { font-size: 34px !important; }
+  .footer-cols { grid-template-columns: 1fr 1fr !important; gap: 32px !important; }
+  .footer-bottom { flex-direction: column !important; align-items: flex-start !important; gap: 8px !important; }
+}
+
+@media (max-width: 480px) {
+  .method-grid { grid-template-columns: 1fr !important; }
+  .emotional-tags { grid-template-columns: 1fr !important; }
+  .footer-cols { grid-template-columns: 1fr !important; }
+  .footer-slogan { font-size: 28px !important; }
+}

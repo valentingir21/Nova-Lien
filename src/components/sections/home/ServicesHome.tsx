@@ -1,24 +1,66 @@
 import Link from "next/link";
 import Eyebrow from "@/components/ui/Eyebrow";
-import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
 
 const services = [
-  { t: "Éducation chiot", d: "Vous venez d'accueillir un chiot ? Pose des bases solides : propreté, rappel, sociabilisation, morsures, premières règles de vie.", f: "Bilan + séances adaptées", p: "À partir de 50€", tag: "Période clé" },
-  { t: "Conseils pré-adoption", d: "Choisir le profil de chien adapté à votre mode de vie, préparer votre foyer, anticiper les premières semaines.", f: "Formulaire + séance domicile", p: "À partir de 50€", tag: "Avant l'adoption" },
-  { t: "Rééducation comportementale", d: "Réactivité, agressivité, peurs, destructions, aboiements, fugues, anxiété de séparation, protection de ressources.", f: "Bilan + protocole sur mesure", p: "Sur devis", tag: "Cas complexe" },
-  { t: "Renforcement du lien humain-chien", d: "Pour les duos qui veulent retrouver une relation sereine, équilibrée, épanouissante — dans les deux sens.", f: "Bilan + protocoles ciblés", p: "À partir de 50€", tag: "Reconnexion" },
+  {
+    t: "Éducation chiot",
+    d: "Vous venez d'accueillir un chiot ? Pose des bases solides : propreté, rappel, sociabilisation, morsures, premières règles de vie.",
+    tag: "Période clé",
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6b7a44" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M10 5.172C10 3.782 8.423 2.679 6.5 3c-2.823.47-4.113 6.006-4 7 .08.703 1.725 1.722 3.656 1 1.261-.472 1.96-1.45 2.344-2.5" />
+        <path d="M14.267 5.172c0-1.39 1.577-2.493 3.5-2.172 2.823.47 4.113 6.006 4 7-.08.703-1.725 1.722-3.656 1-1.261-.472-1.96-1.45-2.344-2.5" />
+        <path d="M8 14v.5" /><path d="M16 14v.5" />
+        <path d="M11.25 16.25h1.5L12 17l-.75-.75z" />
+        <path d="M4.42 11.247A13.15 13.15 0 0 0 4 14.556C4 18.728 7.582 21 12 21s8-2.272 8-6.444c0-1.061-.162-2.2-.493-3.309m-9.243-6.082A8.801 8.801 0 0 1 12 5c.78 0 1.5.108 2.161.306" />
+      </svg>
+    ),
+  },
+  {
+    t: "Conseils pré-adoption",
+    d: "Choisir le profil de chien adapté à votre mode de vie, préparer votre foyer, anticiper les premières semaines.",
+    tag: "Avant l'adoption",
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6b7a44" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+        <polyline points="9 22 9 12 15 12 15 22" />
+        <path d="M12 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" fill="#6b7a44" />
+      </svg>
+    ),
+  },
+  {
+    t: "Rééducation comportementale",
+    d: "Réactivité, agressivité, peurs, destructions, aboiements, fugues, anxiété de séparation, protection de ressources.",
+    tag: "Réeducation",
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6b7a44" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+        <path d="M3 3v5h5" />
+      </svg>
+    ),
+  },
+  {
+    t: "Renforcement du lien humain-chien",
+    d: "Pour les duos qui veulent retrouver une relation sereine, équilibrée, épanouissante — dans les deux sens.",
+    tag: "Reconnexion",
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6b7a44" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+      </svg>
+    ),
+  },
 ];
 
 export default function ServicesHome() {
   return (
-    <section style={{ padding: "120px 56px", background: "#f1ecdc" }}>
+    <section className="services-section" style={{ padding: "80px 56px", background: "#fbfaf4" }}>
       <div style={{ maxWidth: 1240, margin: "0 auto" }}>
         <div
           style={{
             display: "flex",
             justifyContent: "space-between",
             alignItems: "flex-end",
-            marginBottom: 56,
+            marginBottom: 32,
             flexWrap: "wrap",
             gap: 24,
           }}
@@ -29,20 +71,20 @@ export default function ServicesHome() {
               style={{
                 fontFamily: "var(--font-quicksand), system-ui, sans-serif",
                 fontWeight: 600,
-                fontSize: "clamp(44px, 5vw, 64px)",
-                lineHeight: 1,
+                fontSize: "clamp(32px, 3.2vw, 44px)",
+                lineHeight: 1.05,
                 color: "#1c2018",
                 margin: 0,
                 letterSpacing: "-0.02em",
               }}
             >
-              Quatre façons
+              Quatre façons de
               <br />
-              de cheminer ensemble.
+              <span style={{ color: "#6b7a44" }}>cheminer ensemble.</span>
             </h2>
           </div>
           <Link
-            href="/tarifs"
+            href="/services"
             style={{
               fontFamily: "var(--font-manrope), system-ui, sans-serif",
               fontWeight: 600,
@@ -53,70 +95,63 @@ export default function ServicesHome() {
               textDecoration: "none",
             }}
           >
-            Voir tous les tarifs &amp; forfaits →
+            Voir tous les tarifs & forfaits →
           </Link>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
+        <div className="services-cards" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
           {services.map((s, i) => (
             <article
               key={i}
               style={{
                 background: "#ffffff",
-                borderRadius: 28,
+                borderRadius: 20,
                 border: "1px solid #e8e4d4",
-                padding: 32,
+                padding: "18px 20px",
                 display: "grid",
-                gridTemplateColumns: "130px 1fr",
-                gap: 28,
-                minHeight: 240,
+                gridTemplateColumns: "80px 1fr",
+                gap: 18,
+                alignItems: "center",
               }}
             >
-              <div style={{ borderRadius: 20, overflow: "hidden" }}>
-                <ImagePlaceholder tone={i % 2 === 0 ? "sage" : "cream"} aspect={1.2} />
+              <div
+                style={{
+                  width: 80,
+                  height: 80,
+                  borderRadius: 18,
+                  background: "#dde2ce",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  flexShrink: 0,
+                }}
+              >
+                {s.icon}
               </div>
-              <div style={{ display: "flex", flexDirection: "column" }}>
-                <div
+              <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+                <span
                   style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    gap: 8,
+                    fontFamily: "var(--font-manrope), system-ui, sans-serif",
+                    fontSize: 10,
+                    color: "#4a4f3f",
+                    fontWeight: 700,
+                    letterSpacing: "0.06em",
+                    textTransform: "uppercase",
+                    background: "#f7f2e3",
+                    padding: "3px 10px",
+                    borderRadius: 999,
+                    border: "1px solid #e8e4d4",
+                    alignSelf: "flex-start",
                   }}
                 >
-                  <div
-                    style={{
-                      fontFamily: "var(--font-manrope), system-ui, sans-serif",
-                      fontSize: 10,
-                      color: "#6b7a44",
-                      fontWeight: 700,
-                      letterSpacing: "0.12em",
-                      textTransform: "uppercase",
-                    }}
-                  >
-                    Nº 0{i + 1}
-                  </div>
-                  <span
-                    style={{
-                      fontFamily: "var(--font-manrope), system-ui, sans-serif",
-                      fontSize: 11,
-                      color: "#4a4f3f",
-                      fontWeight: 600,
-                      letterSpacing: "0.04em",
-                      background: "#f7f2e3",
-                      padding: "4px 10px",
-                      borderRadius: 999,
-                    }}
-                  >
-                    {s.tag}
-                  </span>
-                </div>
+                  {s.tag}
+                </span>
                 <h3
                   style={{
                     fontFamily: "var(--font-quicksand), system-ui, sans-serif",
                     fontWeight: 600,
-                    fontSize: 22,
-                    margin: "10px 0 8px",
+                    fontSize: 17,
+                    margin: 0,
                     color: "#1c2018",
                     lineHeight: 1.15,
                   }}
@@ -126,71 +161,36 @@ export default function ServicesHome() {
                 <p
                   style={{
                     fontFamily: "var(--font-manrope), system-ui, sans-serif",
-                    fontSize: 13.5,
-                    lineHeight: 1.55,
+                    fontSize: 12,
+                    lineHeight: 1.5,
                     color: "#4a4f3f",
                     margin: 0,
                   }}
                 >
                   {s.d}
                 </p>
-                <div
+                <Link
+                  href="/services"
                   style={{
-                    marginTop: "auto",
-                    paddingTop: 16,
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    borderTop: "1px solid #e8e4d4",
+                    fontFamily: "var(--font-manrope), system-ui, sans-serif",
+                    fontWeight: 600,
+                    fontSize: 12,
+                    color: "#6b7a44",
+                    borderBottom: "1px solid #6b7a44",
+                    paddingBottom: 1,
+                    textDecoration: "none",
+                    alignSelf: "flex-start",
                   }}
                 >
-                  <div>
-                    <div
-                      style={{
-                        fontFamily: "var(--font-quicksand), system-ui, sans-serif",
-                        fontWeight: 700,
-                        fontSize: 18,
-                        color: "#1c2018",
-                      }}
-                    >
-                      {s.p}
-                    </div>
-                    <div
-                      style={{
-                        fontFamily: "var(--font-manrope), system-ui, sans-serif",
-                        fontSize: 11,
-                        color: "#7a7f6b",
-                      }}
-                    >
-                      {s.f}
-                    </div>
-                  </div>
-                  <Link
-                    href="/services"
-                    style={{
-                      width: 36,
-                      height: 36,
-                      borderRadius: 99,
-                      background: "#8f9e63",
-                      color: "#fbfaf4",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      fontFamily: "var(--font-manrope), system-ui, sans-serif",
-                      fontWeight: 600,
-                      textDecoration: "none",
-                      fontSize: 16,
-                    }}
-                  >
-                    →
-                  </Link>
-                </div>
+                  En savoir plus →
+                </Link>
               </div>
             </article>
           ))}
         </div>
 
         <div
+          className="services-cta-banner"
           style={{
             marginTop: 24,
             background: "#8f9e63",

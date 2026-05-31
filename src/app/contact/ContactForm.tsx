@@ -9,7 +9,7 @@ const schema = z.object({
   fullName: z.string().min(2, "Nom requis"),
   phone: z.string().regex(/^(?:\+33|0)[1-9](?:\d{8})$/, "Numéro de téléphone invalide"),
   email: z.string().email("Email invalide"),
-  address: z.string().min(2, "Commune requise"),
+  address: z.string().min(5, "Adresse requise"),
   dogName: z.string().optional(),
   dogBreed: z.string().optional(),
   dogAge: z.string().optional(),
@@ -20,7 +20,8 @@ const schema = z.object({
   availability: z.array(z.object({
     date: z.string().min(1, "Date requise"),
     timeOfDay: z.enum(["morning", "afternoon", "evening"]),
-  })).min(1, "Ajoutez au moins une disponibilité"),
+    timeRange: z.string().optional(),
+  })).min(5, "Indiquez au moins 5 créneaux"),
   rgpdConsent: z.literal(true, { error: "Vous devez accepter la politique de confidentialité" }),
 });
 
@@ -78,6 +79,18 @@ const sectionTitleStyle = {
   margin: "0 0 20px",
 };
 
+const situationGuide = [
+  "Combien êtes-vous dans le foyer (humain + animaux) ?",
+  "Quel(s) comportement(s) vous pose problème, et depuis quand ?",
+  "Qu'est-ce que vous aimeriez voir changer ?",
+  "Ce qui vous pèse au quotidien ?",
+  "Est-ce votre premier chien ?",
+  "Des changements récents dans votre vie ? (Déménagement, séparation, deuil, travail, ...)",
+  "Y a-t-il des situations que vous évitez à cause de la/les problématiques ?",
+  "Avez-vous déjà fait appel à un éducateur canin précédemment ?",
+  "N'hésitez pas à ajouter tout ce qui vous semble important.",
+];
+
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
@@ -92,7 +105,13 @@ export default function ContactForm() {
     resolver: zodResolver(schema),
     defaultValues: {
       servicesInterest: [],
-      availability: [{ date: "", timeOfDay: "morning" }],
+      availability: [
+        { date: "", timeOfDay: "morning", timeRange: "" },
+        { date: "", timeOfDay: "morning", timeRange: "" },
+        { date: "", timeOfDay: "morning", timeRange: "" },
+        { date: "", timeOfDay: "morning", timeRange: "" },
+        { date: "", timeOfDay: "morning", timeRange: "" },
+      ],
       dogNeutered: false,
     },
   });
@@ -206,6 +225,18 @@ export default function ContactForm() {
               et de votre chien.
             </span>
           </h2>
+          <p
+            style={{
+              fontFamily: "var(--font-manrope), system-ui, sans-serif",
+              fontSize: 15,
+              lineHeight: 1.65,
+              color: "#7a7f6b",
+              marginTop: 12,
+              fontStyle: "italic",
+            }}
+          >
+            Je vous recontacte dans les 48h pour convenir ensemble d&apos;un rendez-vous.
+          </p>
         </div>
 
         <form onSubmit={handleSubmit(onSubmit)} noValidate>
@@ -231,8 +262,8 @@ export default function ContactForm() {
                   {errors.email && <p style={errorStyle}>{errors.email.message}</p>}
                 </div>
                 <div>
-                  <label style={labelStyle}>Commune *</label>
-                  <input {...register("address")} placeholder="Dijon" style={inputStyle} />
+                  <label style={labelStyle}>Adresse *</label>
+                  <input {...register("address")} placeholder="12 rue des Lilas, 21000 Dijon" style={inputStyle} />
                   {errors.address && <p style={errorStyle}>{errors.address.message}</p>}
                 </div>
               </div>
@@ -304,10 +335,48 @@ export default function ContactForm() {
 
               <div>
                 <label style={labelStyle}>Décrivez votre situation *</label>
+                {/* Guide visible au-dessus */}
+                <div
+                  style={{
+                    background: "#f7f2e3",
+                    border: "1px solid #e8e4d4",
+                    borderRadius: 12,
+                    padding: "16px 20px",
+                    marginBottom: 12,
+                  }}
+                >
+                  <div
+                    style={{
+                      fontFamily: "var(--font-manrope), system-ui, sans-serif",
+                      fontSize: 13,
+                      fontWeight: 700,
+                      color: "#6b7a44",
+                      marginBottom: 10,
+                      letterSpacing: "0.04em",
+                    }}
+                  >
+                    Décrivez-moi la situation, même imparfaitement — il n&apos;y a pas de mauvaise façon de raconter.
+                    Quelques pistes pour vous guider :
+                  </div>
+                  <ul
+                    style={{
+                      fontFamily: "var(--font-manrope), system-ui, sans-serif",
+                      fontSize: 13,
+                      lineHeight: 1.7,
+                      color: "#4a4f3f",
+                      margin: 0,
+                      paddingLeft: 18,
+                    }}
+                  >
+                    {situationGuide.map((g, i) => (
+                      <li key={i}>{g}</li>
+                    ))}
+                  </ul>
+                </div>
                 <textarea
                   {...register("description")}
-                  rows={5}
-                  placeholder="Parlez-moi de votre chien, des comportements qui vous posent problème, de vos objectifs... Plus vous êtes précis(e), mieux je pourrai vous aider."
+                  rows={6}
+                  placeholder="Racontez votre situation ici…"
                   style={{ ...inputStyle, resize: "vertical", lineHeight: 1.6 }}
                 />
                 {errors.description && <p style={errorStyle}>{errors.description.message}</p>}
@@ -318,11 +387,11 @@ export default function ContactForm() {
             <div style={{ background: "#ffffff", border: "1px solid #e8e4d4", borderRadius: 24, padding: "32px 36px" }}>
               <p style={sectionTitleStyle}>Vos disponibilités *</p>
               <p style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 14, color: "#7a7f6b", marginTop: -10, marginBottom: 20 }}>
-                Indiquez jusqu&apos;à 5 créneaux préférentiels (non contractuels).
+                Indiquez 5 créneaux minimum préférentiels (non contractuels). Vous pouvez en ajouter davantage.
               </p>
               <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
                 {fields.map((field, i) => (
-                  <div key={field.id} style={{ display: "grid", gridTemplateColumns: "1fr 1fr auto", gap: 12, alignItems: "end" }}>
+                  <div key={field.id} style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr auto", gap: 12, alignItems: "end" }}>
                     <div>
                       {i === 0 && <label style={labelStyle}>Date souhaitée</label>}
                       <input
@@ -343,8 +412,16 @@ export default function ContactForm() {
                       </select>
                     </div>
                     <div>
+                      {i === 0 && <label style={labelStyle}>Tranche horaire</label>}
+                      <input
+                        {...register(`availability.${i}.timeRange`)}
+                        placeholder="ex. 9h-11h"
+                        style={inputStyle}
+                      />
+                    </div>
+                    <div>
                       {i === 0 && <div style={{ height: 25 }} />}
-                      {fields.length > 1 && (
+                      {fields.length > 5 && (
                         <button
                           type="button"
                           onClick={() => remove(i)}
@@ -366,26 +443,24 @@ export default function ContactForm() {
                   </div>
                 ))}
               </div>
-              {fields.length < 5 && (
-                <button
-                  type="button"
-                  onClick={() => append({ date: "", timeOfDay: "morning" })}
-                  style={{
-                    marginTop: 12,
-                    padding: "10px 18px",
-                    borderRadius: 10,
-                    border: "1px dashed #c8c4b4",
-                    background: "transparent",
-                    color: "#6b7a44",
-                    fontFamily: "var(--font-manrope), system-ui, sans-serif",
-                    fontSize: 13,
-                    fontWeight: 600,
-                    cursor: "pointer",
-                  }}
-                >
-                  + Ajouter un créneau
-                </button>
-              )}
+              <button
+                type="button"
+                onClick={() => append({ date: "", timeOfDay: "morning", timeRange: "" })}
+                style={{
+                  marginTop: 12,
+                  padding: "10px 18px",
+                  borderRadius: 10,
+                  border: "1px dashed #c8c4b4",
+                  background: "transparent",
+                  color: "#6b7a44",
+                  fontFamily: "var(--font-manrope), system-ui, sans-serif",
+                  fontSize: 13,
+                  fontWeight: 600,
+                  cursor: "pointer",
+                }}
+              >
+                + Ajouter un créneau
+              </button>
               {errors.availability && !Array.isArray(errors.availability) && (
                 <p style={errorStyle}>{errors.availability.message}</p>
               )}

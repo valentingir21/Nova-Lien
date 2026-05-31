@@ -9,7 +9,7 @@ const principles = [
 
 export default function Method() {
   return (
-    <section style={{ background: "#fbfaf4", padding: "120px 56px" }}>
+    <section className="method-section" style={{ background: "#f1ecdc", padding: "120px 56px" }}>
       <div style={{ maxWidth: 1240, margin: "0 auto" }}>
         <div
           style={{
@@ -24,6 +24,7 @@ export default function Method() {
           <div>
             <Eyebrow>Mon approche</Eyebrow>
             <h2
+              className="method-title"
               style={{
                 fontFamily: "var(--font-quicksand), system-ui, sans-serif",
                 fontWeight: 600,
@@ -39,22 +40,10 @@ export default function Method() {
               <span style={{ color: "#6b7a44" }}>un seul cap.</span>
             </h2>
           </div>
-          <p
-            style={{
-              fontFamily: "var(--font-manrope), system-ui, sans-serif",
-              fontSize: 17,
-              color: "#4a4f3f",
-              maxWidth: 400,
-              margin: 0,
-              lineHeight: 1.65,
-            }}
-          >
-            Bienveillance, respect des émotions, méthodes positives. Pas de soumission ni de
-            coercition — juste du travail, ensemble.
-          </p>
         </div>
 
         <div
+          className="method-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr 1fr 1fr",

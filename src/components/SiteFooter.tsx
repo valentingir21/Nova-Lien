@@ -1,13 +1,14 @@
 import Link from "next/link";
-import PawIcon from "./ui/PawIcon";
+import Image from "next/image";
 
 export default function SiteFooter() {
   return (
-    <footer style={{ padding: "80px 56px 32px", background: "#8f9e63", color: "#fbfaf4" }}>
+    <footer className="footer-section" style={{ padding: "80px 56px 32px", background: "#8f9e63", color: "#fbfaf4" }}>
       <div style={{ maxWidth: 1240, margin: "0 auto" }}>
         {/* Slogan */}
         <div style={{ paddingBottom: 56, marginBottom: 48, borderBottom: "1px solid rgba(255,255,255,0.1)" }}>
           <div
+            className="footer-slogan"
             style={{
               fontFamily: "var(--font-quicksand), system-ui, sans-serif",
               fontWeight: 600,
@@ -34,6 +35,7 @@ export default function SiteFooter() {
 
         {/* Columns */}
         <div
+          className="footer-cols"
           style={{
             display: "grid",
             gridTemplateColumns: "1.6fr 1fr 1fr 1fr",
@@ -43,19 +45,13 @@ export default function SiteFooter() {
           {/* Brand */}
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
-              <div
-                style={{
-                  width: 40,
-                  height: 40,
-                  borderRadius: 12,
-                  background: "rgba(255,255,255,0.15)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <PawIcon size={22} color="#fbfaf4" rotate={-10} />
-              </div>
+              <Image
+                src="/logo-novalien.png"
+                alt="Nova Lien"
+                width={52}
+                height={52}
+                style={{ display: "block", flexShrink: 0 }}
+              />
               <div>
                 <div
                   style={{
@@ -86,6 +82,7 @@ export default function SiteFooter() {
                 lineHeight: 1.6,
                 maxWidth: 320,
                 margin: 0,
+                paddingLeft: 64,
               }}
             >
               Amandine Pinto · Éducatrice canine comportementaliste à Dijon. Méthodes
@@ -97,8 +94,7 @@ export default function SiteFooter() {
           <FooterCol title="Site">
             <FooterLink href="/">Accueil</FooterLink>
             <FooterLink href="/a-propos">À propos</FooterLink>
-            <FooterLink href="/services">Services</FooterLink>
-            <FooterLink href="/tarifs">Tarifs</FooterLink>
+            <FooterLink href="/services">Services & Tarifs</FooterLink>
             <FooterLink href="/faq">FAQ</FooterLink>
             <FooterLink href="/contact">Contact</FooterLink>
           </FooterCol>
@@ -123,6 +119,7 @@ export default function SiteFooter() {
 
         {/* Bottom bar */}
         <div
+          className="footer-bottom"
           style={{
             marginTop: 48,
             paddingTop: 22,
