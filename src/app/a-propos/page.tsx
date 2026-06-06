@@ -6,6 +6,7 @@ import CheckIcon from "@/components/ui/CheckIcon";
 import PawPattern from "@/components/ui/PawPattern";
 import PawIcon from "@/components/ui/PawIcon";
 import Meaning from "@/components/sections/home/Meaning";
+import ParcoursSticky from "@/components/sections/about/ParcoursSticky";
 
 export const metadata: Metadata = {
   title: "À propos — Amandine Pinto",
@@ -16,45 +17,58 @@ export const metadata: Metadata = {
 export default function AProposPage() {
   return (
     <>
+      <style>{`
+        @media (max-width: 768px) {
+          .ap-section { padding-left: 24px !important; padding-right: 24px !important; }
+          .ap-section-tall { min-height: unset !important; }
+
+          /* Hero */
+          .ap-hero-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+          .ap-hero-photo { display: none !important; }
+
+          /* Principes */
+          .ap-principes-grid { grid-template-columns: 1fr !important; }
+          .ap-principes-photo { display: none !important; }
+          .ap-principes-cards { grid-template-columns: 1fr !important; }
+
+          /* Vision */
+          .ap-vision-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+
+          /* Autonomie */
+          .ap-autonomie-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+
+          /* Transparence */
+          .ap-transparence { padding-top: 80px !important; padding-bottom: 80px !important; }
+          .ap-transparence-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+
+          /* Origines */
+          .ap-origines-card { grid-template-columns: 1fr !important; }
+          .ap-origines-photo { display: none !important; }
+
+          /* CTA */
+          .ap-cta-card { grid-template-columns: 1fr !important; padding: 48px 28px !important; gap: 36px !important; }
+        }
+      `}</style>
+
       {/* HERO */}
-      <section style={{ padding: "80px 56px 100px", background: "#fbfaf4" }}>
+      <section className="ap-section" style={{ padding: "80px 56px 100px", background: "#fbfaf4", minHeight: "100vh", display: "flex", alignItems: "center" }}>
         <div style={{ maxWidth: 1240, margin: "0 auto" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: 80, alignItems: "center" }}>
+          <div className="ap-hero-grid" style={{ display: "grid", gridTemplateColumns: "1.2fr 0.7fr", gap: 80, alignItems: "center" }}>
             <div>
-              <div
-                style={{
-                  display: "inline-flex",
-                  gap: 10,
-                  alignItems: "center",
-                  padding: "8px 16px",
-                  borderRadius: 999,
-                  background: "#ffffff",
-                  border: "1px solid #e8e4d4",
-                  fontFamily: "var(--font-manrope), system-ui, sans-serif",
-                  fontSize: 13,
-                  fontWeight: 500,
-                  color: "#4a4f3f",
-                }}
-              >
-                <span style={{ width: 6, height: 6, borderRadius: 99, background: "#8f9e63", flexShrink: 0 }} />
-                La fondatrice de Nova Lien
-              </div>
               <h1
                 style={{
                   fontFamily: "var(--font-quicksand), system-ui, sans-serif",
                   fontWeight: 600,
-                  fontSize: "clamp(64px, 7vw, 96px)",
-                  lineHeight: 0.96,
-                  margin: "28px 0 0",
+                  fontSize: "clamp(48px, 5.5vw, 80px)",
+                  lineHeight: 1.0,
+                  margin: "0 0 0",
                   color: "#1c2018",
                   letterSpacing: "-0.03em",
                 }}
               >
-                Bonjour,
+                Fondatrice,
                 <br />
-                moi c&apos;est
-                <br />
-                <span style={{ color: "#6b7a44" }}>Amandine.</span>
+                <span style={{ color: "#6b7a44" }}>Amandine Pinto.</span>
               </h1>
               <p
                 style={{
@@ -66,12 +80,10 @@ export default function AProposPage() {
                   maxWidth: 520,
                 }}
               >
-                <strong>Éducatrice canine comportementaliste – secteur Dijon et ses alentours.</strong>{" "}
-                J&apos;accompagne les dog parents pour transformer les défis du quotidien en moments
-                de complicité et de compréhension mutuelle.
+                Éducatrice canine comportementaliste – secteur Dijon et ses alentours.
               </p>
             </div>
-            <div style={{ position: "relative" }}>
+            <div className="ap-hero-photo" style={{ position: "relative" }}>
               <div
                 style={{
                   borderRadius: 28,
@@ -81,173 +93,116 @@ export default function AProposPage() {
               >
                 <ImagePlaceholder tone="sage" aspect={1.15} label="Portrait Amandine" />
               </div>
-              <div
-                style={{
-                  position: "absolute",
-                  bottom: 24,
-                  left: -24,
-                  background: "#ffffff",
-                  padding: "16px 22px",
-                  borderRadius: 22,
-                  display: "flex",
-                  gap: 14,
-                  alignItems: "center",
-                  boxShadow: "0 16px 40px rgba(0,0,0,0.12)",
-                  border: "1px solid #e8e4d4",
-                }}
-              >
-                <div
-                  style={{
-                    width: 44,
-                    height: 44,
-                    borderRadius: 12,
-                    background: "#dde2ce",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    flexShrink: 0,
-                  }}
-                >
-                  <PawIcon size={24} color="#6b7a44" />
-                </div>
-                <div>
-                  <div
-                    style={{
-                      fontFamily: "var(--font-quicksand), system-ui, sans-serif",
-                      fontWeight: 600,
-                      fontSize: 15,
-                      color: "#1c2018",
-                    }}
-                  >
-                    Amandine Pinto
-                  </div>
-                  <div
-                    style={{
-                      fontFamily: "var(--font-manrope), system-ui, sans-serif",
-                      fontSize: 12,
-                      color: "#7a7f6b",
-                    }}
-                  >
-                    ACACED
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* PRINCIPES */}
-      <section style={{ padding: "110px 56px", background: "#f1ecdc" }}>
+      <section className="ap-section" style={{ padding: "64px 56px", background: "#f1ecdc" }}>
         <div style={{ maxWidth: 1240, margin: "0 auto" }}>
-          <div style={{ textAlign: "center", marginBottom: 56 }}>
-            <Eyebrow>Ce qui guide mon accompagnement</Eyebrow>
-            <h2
-              style={{
-                fontFamily: "var(--font-quicksand), system-ui, sans-serif",
-                fontWeight: 700,
-                fontSize: "clamp(44px, 5vw, 68px)",
-                lineHeight: 1,
-                color: "#1c2018",
-                margin: "0 auto",
-                letterSpacing: "-0.02em",
-                maxWidth: 700,
-              }}
-            >
-              Quatre principes,
-              <br />
-              <span style={{ color: "#6b7a44" }}>non négociables.</span>
-            </h2>
-            <div
-              style={{
-                marginTop: 40,
-                display: "flex",
-                justifyContent: "center",
-              }}
-            >
-              <div
+          <div className="ap-principes-grid" style={{ display: "grid", gridTemplateColumns: "1.6fr 0.75fr", gap: 48, alignItems: "center" }}>
+
+            {/* Gauche : eyebrow + titre + 4 cartes */}
+            <div>
+              <Eyebrow>Ce qui guide mon accompagnement</Eyebrow>
+              <h2
                 style={{
-                  width: 280,
-                  borderRadius: 20,
-                  overflow: "hidden",
-                  boxShadow: "0 12px 32px rgba(28,32,24,0.12)",
+                  fontFamily: "var(--font-quicksand), system-ui, sans-serif",
+                  fontWeight: 700,
+                  fontSize: "clamp(28px, 3vw, 42px)",
+                  lineHeight: 1.05,
+                  color: "#1c2018",
+                  margin: "0 0 24px",
+                  letterSpacing: "-0.02em",
                 }}
               >
-                <ImagePlaceholder tone="sage" aspect={1} label="Patte chien & main humaine" />
+                Quatre principes,{" "}
+                <span style={{ color: "#6b7a44" }}>non négociables.</span>
+              </h2>
+              <div className="ap-principes-cards" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
+                {[
+                  { t: "Méthodes positives et respectueuses", d: "Aucune coercition, aucune violence physique ou psychologique. Le respect du chien est non négociable." },
+                  { t: "Prise en compte des émotions et besoins", d: "Ceux du chien… et du dog parent. On travaille à deux, pas l'un contre l'autre." },
+                  { t: "Approche basée sur le comportement canin", d: "Sciences du comportement, lecture du langage canin. Ce qui guide mes décisions, c'est la réalité de votre chien." },
+                  { t: "Accompagnement personnalisé", d: "Chaque duo est unique. Chaque programme l'est aussi, pas de recette toute faite." },
+                ].map((x, i) => (
+                  <div
+                    key={i}
+                    style={{
+                      background: "#ffffff",
+                      border: "1px solid #e8e4d4",
+                      borderRadius: 18,
+                      padding: "20px 20px",
+                      display: "grid",
+                      gridTemplateColumns: "40px 1fr",
+                      gap: 14,
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: 40,
+                        height: 40,
+                        borderRadius: 11,
+                        background: "#dde2ce",
+                        color: "#6b7a44",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        fontFamily: "var(--font-quicksand), system-ui, sans-serif",
+                        fontWeight: 700,
+                        fontSize: 14,
+                        flexShrink: 0,
+                      }}
+                    >
+                      {String(i + 1).padStart(2, "0")}
+                    </div>
+                    <div>
+                      <h3
+                        style={{
+                          fontFamily: "var(--font-quicksand), system-ui, sans-serif",
+                          fontWeight: 600,
+                          fontSize: 17,
+                          margin: 0,
+                          color: "#1c2018",
+                          lineHeight: 1.2,
+                        }}
+                      >
+                        {x.t}
+                      </h3>
+                      <p
+                        style={{
+                          fontFamily: "var(--font-manrope), system-ui, sans-serif",
+                          fontSize: 15,
+                          lineHeight: 1.6,
+                          color: "#4a4f3f",
+                          margin: "7px 0 0",
+                        }}
+                      >
+                        {x.d}
+                      </p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
-          </div>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
-            {[
-              { t: "Méthodes positives et respectueuses", d: "Aucune coercition, aucune violence — physique ou psychologique. Le respect du chien est non négociable." },
-              { t: "Prise en compte des émotions et besoins", d: "Ceux du chien… et du dog parent. On travaille à deux, pas l'un contre l'autre." },
-              { t: "Approche basée sur le comportement canin", d: "Sciences du comportement, lecture du langage canin. Ce qui guide mes décisions, c'est la réalité de votre chien — pas les raccourcis ni les idées reçues." },
-              { t: "Accompagnement personnalisé", d: "Chaque duo est unique. Chaque programme l'est aussi — pas de recette toute faite." },
-            ].map((x, i) => (
-              <div
-                key={i}
-                style={{
-                  background: "#ffffff",
-                  border: "1px solid #e8e4d4",
-                  borderRadius: 24,
-                  padding: "32px 32px",
-                  display: "grid",
-                  gridTemplateColumns: "52px 1fr",
-                  gap: 20,
-                }}
-              >
-                <div
-                  style={{
-                    width: 52,
-                    height: 52,
-                    borderRadius: 14,
-                    background: "#dde2ce",
-                    color: "#6b7a44",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontFamily: "var(--font-quicksand), system-ui, sans-serif",
-                    fontWeight: 700,
-                    fontSize: 18,
-                    flexShrink: 0,
-                  }}
-                >
-                  {String(i + 1).padStart(2, "0")}
-                </div>
-                <div>
-                  <h3
-                    style={{
-                      fontFamily: "var(--font-quicksand), system-ui, sans-serif",
-                      fontWeight: 600,
-                      fontSize: 22,
-                      margin: 0,
-                      color: "#1c2018",
-                      lineHeight: 1.2,
-                    }}
-                  >
-                    {x.t}
-                  </h3>
-                  <p
-                    style={{
-                      fontFamily: "var(--font-manrope), system-ui, sans-serif",
-                      fontSize: 15,
-                      lineHeight: 1.6,
-                      color: "#4a4f3f",
-                      margin: "8px 0 0",
-                    }}
-                  >
-                    {x.d}
-                  </p>
-                </div>
-              </div>
-            ))}
+
+            {/* Droite : photo */}
+            <div className="ap-principes-photo" style={{ borderRadius: 24, overflow: "hidden", boxShadow: "0 24px 64px rgba(28,32,24,0.15)", height: 440 }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/main-chien.jpg"
+                alt="Main humaine et chien"
+                style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center bottom", display: "block" }}
+              />
+            </div>
           </div>
         </div>
       </section>
 
       {/* VISION ÉDUCATION */}
-      <section style={{ padding: "120px 56px", background: "#fbfaf4" }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+      <section className="ap-section ap-section-tall" style={{ padding: "120px 56px", background: "#fbfaf4", minHeight: "100vh", display: "flex", alignItems: "center" }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto", width: "100%" }}>
           <Eyebrow>Ma vision de l&apos;éducation canine</Eyebrow>
           <h2
             style={{
@@ -261,27 +216,15 @@ export default function AProposPage() {
               maxWidth: 900,
             }}
           >
-            Une vraie éducation
+            Éduquer bien au-delà
             <br />
-            va bien{" "}
-            <span
-              style={{
-                color: "#6b7a44",
-                fontFamily: "var(--font-lora), Georgia, serif",
-                fontStyle: "italic",
-                fontWeight: 500,
-              }}
-            >
-              au-delà
-            </span>
-            <br />
-            des ordres basiques.
+            <span style={{ color: "#6b7a44" }}>des ordres basiques.</span>
           </h2>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 56, marginTop: 56 }}>
+          <div className="ap-vision-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 56, marginTop: 56 }}>
             <div>
               <p style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 18, lineHeight: 1.75, color: "#4a4f3f", margin: 0 }}>
-                Elle forme un chien <strong>bien dans ses pattes</strong> : capable de réfléchir, de
-                s&apos;adapter, et de faire de bons choix — même sans qu&apos;on le lui demande.
+                Je forme un chien <strong>bien dans ses pattes</strong> : capable de réfléchir, de
+                s&apos;adapter, et de faire de bons choix, même sans qu&apos;on le lui demande.
               </p>
               <p style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 17, lineHeight: 1.7, color: "#4a4f3f", marginTop: 20 }}>
                 Un comportement non désiré n&apos;apparaît jamais par hasard. Il est toujours la
@@ -314,107 +257,118 @@ export default function AProposPage() {
       </section>
 
       {/* AUTONOMIE */}
-      <section style={{ padding: "120px 56px", background: "#f1ecdc" }}>
-        <div style={{ maxWidth: 1240, margin: "0 auto" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "0.9fr 1.1fr", gap: 64, alignItems: "flex-start" }}>
-            <div style={{ position: "sticky", top: 100 }}>
+      <section className="ap-section ap-section-tall" style={{ padding: "64px 56px", background: "#f1ecdc", minHeight: "100vh", display: "flex", alignItems: "center" }}>
+        <div style={{ maxWidth: 1240, margin: "0 auto", width: "100%" }}>
+          <div className="ap-autonomie-grid" style={{ display: "grid", gridTemplateColumns: "0.85fr 1.15fr", gap: 56, alignItems: "flex-start" }}>
+            <div>
               <Eyebrow>Mon objectif</Eyebrow>
               <h2
                 style={{
                   fontFamily: "var(--font-quicksand), system-ui, sans-serif",
                   fontWeight: 600,
-                  fontSize: "clamp(36px, 4vw, 56px)",
-                  lineHeight: 1,
+                  fontSize: "clamp(32px, 3.5vw, 50px)",
+                  lineHeight: 1.05,
                   color: "#1c2018",
-                  margin: 0,
+                  margin: "0 0 20px",
                   letterSpacing: "-0.02em",
                 }}
               >
-                Que ton chien soit
+                Une compréhension
                 <br />
-                <span style={{ color: "#6b7a44" }}>bien dans sa tête.</span>
+                <span style={{ color: "#6b7a44" }}>mutuelle.</span>
               </h2>
-              <p style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 17, lineHeight: 1.7, color: "#4a4f3f", marginTop: 24, maxWidth: 420 }}>
-                Qu&apos;il développe une vraie autonomie, qu&apos;il ait confiance en lui, en toi,
-                et en son environnement.
+              <p style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 17, lineHeight: 1.65, color: "#4a4f3f", margin: "0 0 14px", maxWidth: 380 }}>
+                Qu&apos;il ait confiance en lui, en toi, et en son environnement.
               </p>
-              <p style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 17, lineHeight: 1.7, color: "#4a4f3f", marginTop: 16, maxWidth: 420 }}>
+              <p style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 17, lineHeight: 1.65, color: "#4a4f3f", margin: "0 0 14px", maxWidth: 380 }}>
                 Et toi en tant que dog parent, je t&apos;accompagne dans l&apos;acquisition des
                 connaissances essentielles pour mieux comprendre ton chien, et ne plus jamais te
                 sentir seul(e) face aux situations.
               </p>
-              <p style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 17, lineHeight: 1.7, color: "#4a4f3f", marginTop: 16, maxWidth: 420, fontWeight: 600 }}>
+              <p style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 17, lineHeight: 1.65, color: "#4a4f3f", margin: 0, maxWidth: 380, fontWeight: 600 }}>
                 L&apos;autonomie pour chacun. Un lien entre vous encore plus solide.
               </p>
             </div>
             <div>
-              <div style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 12, color: "#6b7a44", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: 16 }}>
+              <div style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 12, color: "#6b7a44", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: 14 }}>
                 Concrètement, je travaille pour que ton chien développe&nbsp;:
               </div>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 24 }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 10, marginBottom: 12 }}>
                 {[
-                  { t: "Ses autocontrôles", d: "Pas l'obéissance forcée, mais la capacité réelle à se réguler : gérer l'excitation, tolérer la frustration, faire face à l'imprévu sans paniquer, etc …" },
-                  { t: "Sa capacité à rester calme", d: "Dans la maison, en balade, face aux imprévus." },
-                  { t: "Son focus & sa confiance", d: "Te choisir comme repère, même dans le bruit." },
-                  { t: "Ses bonnes décisions", d: "Faire les bons choix de lui-même, sans consigne." },
+                  {
+                    t: "Ses autocontrôles",
+                    d: "Gérer l'excitation, tolérer la frustration, faire face à l'imprévu sans stress, redescendre après une émotion forte, etc...",
+                    icon: (
+                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="1,10 5,10 7,3 9,17 11,10 15,10 19,10" />
+                      </svg>
+                    ),
+                  },
+                  {
+                    t: "Sa capacité à rester calme",
+                    d: "Dans la maison, en balade, face aux imprévus.",
+                    icon: (
+                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M17 2C17 2 17 11 10 14C3 17 2 17 2 17C2 17 2 16 5 10C8 4 17 2 17 2Z" />
+                        <line x1="2" y1="17" x2="10" y2="9" />
+                      </svg>
+                    ),
+                  },
+                  {
+                    t: "Son focus & sa confiance",
+                    d: "Te choisir comme repère, même dans le bruit.",
+                    icon: (
+                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
+                        <circle cx="10" cy="10" r="7" />
+                        <circle cx="10" cy="10" r="3" />
+                        <line x1="10" y1="1" x2="10" y2="4" />
+                        <line x1="10" y1="16" x2="10" y2="19" />
+                        <line x1="1" y1="10" x2="4" y2="10" />
+                        <line x1="16" y1="10" x2="19" y2="10" />
+                      </svg>
+                    ),
+                  },
+                  {
+                    t: "Sa prise de décisions",
+                    d: "Faire les bons choix de lui-même, sans consigne.",
+                    icon: (
+                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M10 2a5 5 0 0 1 3.5 8.5C12 12 12 13 12 14H8c0-1 0-2-1.5-3.5A5 5 0 0 1 10 2Z" />
+                        <line x1="8" y1="16" x2="12" y2="16" />
+                        <line x1="9" y1="18" x2="11" y2="18" />
+                      </svg>
+                    ),
+                  },
                 ].map((x, i) => (
                   <div
                     key={i}
                     style={{
+                      display: "flex",
+                      gap: 16,
+                      alignItems: "flex-start",
                       background: "#ffffff",
                       border: "1px solid #e8e4d4",
                       borderRadius: 16,
-                      padding: "18px 20px",
+                      padding: "16px 20px",
                     }}
                   >
-                    <div style={{ fontFamily: "var(--font-quicksand), system-ui, sans-serif", fontWeight: 600, fontSize: 17, color: "#1c2018", lineHeight: 1.2 }}>{x.t}</div>
-                    <div style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 13, color: "#4a4f3f", marginTop: 6 }}>{x.d}</div>
-                  </div>
-                ))}
-              </div>
-              <div style={{ display: "flex", flexDirection: "column", gap: 10, marginBottom: 24 }}>
-                {[
-                  "Respecter les espaces et les règles de vie",
-                  "Interagir correctement avec son environnement",
-                  "Faire les bons choix… même en ton absence de consigne",
-                ].map((t, i) => (
-                  <div
-                    key={i}
-                    style={{
-                      display: "flex",
-                      gap: 14,
-                      alignItems: "center",
-                      background: "#ffffff",
-                      border: "1px solid #e8e4d4",
-                      borderRadius: 12,
-                      padding: "14px 18px",
-                    }}
-                  >
-                    <div
-                      style={{
-                        width: 24,
-                        height: 24,
-                        borderRadius: 8,
-                        background: "#dde2ce",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        flexShrink: 0,
-                      }}
-                    >
-                      <CheckIcon size={14} color="#6b7a44" />
+                    <div style={{ width: 44, height: 44, borderRadius: 12, background: "#dde2ce", color: "#6b7a44", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                      {x.icon}
                     </div>
-                    <div style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 15, color: "#1c2018", fontWeight: 500 }}>{t}</div>
+                    <div>
+                      <div style={{ fontFamily: "var(--font-quicksand), system-ui, sans-serif", fontWeight: 600, fontSize: 16, color: "#1c2018", lineHeight: 1.2 }}>{x.t}</div>
+                      <div style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 13, color: "#4a4f3f", marginTop: 5, lineHeight: 1.55 }}>{x.d}</div>
+                    </div>
                   </div>
                 ))}
               </div>
-              <div style={{ background: "#8f9e63", color: "#fbfaf4", borderRadius: 22, padding: "24px 28px" }}>
-                <div style={{ fontFamily: "var(--font-quicksand), system-ui, sans-serif", fontWeight: 600, fontSize: 20, lineHeight: 1.4 }}>
+              <div style={{ background: "#8f9e63", color: "#fbfaf4", borderRadius: 18, padding: "22px 26px" }}>
+                <div style={{ fontFamily: "var(--font-quicksand), system-ui, sans-serif", fontWeight: 600, fontSize: 18, lineHeight: 1.4 }}>
                   Un chien autonome, c&apos;est un chien en bonne santé mentale. Il comprend le
-                  monde qui l&apos;entoure, gère ses émotions, et sait comment réagir — quelles que
+                  monde qui l&apos;entoure, gère ses émotions, et sait comment réagir, quelles que
                   soient les situations.
                 </div>
-                <div style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 14, marginTop: 14, opacity: 0.92, fontStyle: "italic" }}>
+                <div style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 14, marginTop: 12, opacity: 0.92, fontStyle: "italic" }}>
                   Quand ton chien va bien dans sa tête, vous allez bien tous les deux.{" "}
                   <strong style={{ fontStyle: "normal", fontWeight: 700 }}>C&apos;est ça, le vrai changement.</strong>
                 </div>
@@ -425,155 +379,22 @@ export default function AProposPage() {
       </section>
 
       {/* PARCOURS */}
-      <section style={{ padding: "120px 56px", background: "#fbfaf4" }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-          <div style={{ textAlign: "center", marginBottom: 64 }}>
-            <Eyebrow>Mon parcours</Eyebrow>
-            <h2
-              style={{
-                fontFamily: "var(--font-quicksand), system-ui, sans-serif",
-                fontWeight: 600,
-                fontSize: "clamp(40px, 4.5vw, 64px)",
-                lineHeight: 1,
-                color: "#1c2018",
-                margin: 0,
-                letterSpacing: "-0.02em",
-              }}
-            >
-              Une formation exigeante,
-              <br />
-              <span style={{ color: "#6b7a44" }}>et l&apos;envie d&apos;aller plus loin.</span>
-            </h2>
-          </div>
-          <div style={{ position: "relative" }}>
-            <div style={{ position: "absolute", left: 87, top: 20, bottom: 20, width: 2, background: "#e8e4d4" }} />
-            {[
-              {
-                y: "2025",
-                t: "Stage pratique avec Valérie Mouilleseaux-Iches",
-                sub: "« De la main à la patte 21 » · Ahuy et alentours",
-                d: "Une immersion terrain aux côtés d'une professionnelle expérimentée, dans la réalité du métier. Observation, accompagnement de duos, gestion de cas concrets.",
-              },
-              {
-                y: "2025",
-                t: "Diplôme Éducatrice Canine Comportementaliste",
-                sub: "Nature de Chien — centre de formation de référence nationale · certifié Qualiopi",
-                d: "Une formation professionnelle complète, alliant théorie approfondie, pratique avec de vrais chiens et rendez-vous clients réels. Un cursus exigeant qui m'a permis de construire des bases solides et modernes en comportement canin, en méthodes positives et en accompagnement de l'humain.",
-              },
-              {
-                y: "2025",
-                t: "ACACED — Attestation officielle",
-                sub: "Nature de Chien · certifié Qualiopi",
-                d: "L'Attestation de Connaissances pour les Animaux de Compagnie d'Espèces Domestiques — le document officiel délivré par l'État, qui autorise légalement à exercer auprès des animaux de compagnie.",
-              },
-            ].map((x, i) => (
-              <div
-                key={i}
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "88px 1fr 88px",
-                  gap: 32,
-                  alignItems: "flex-start",
-                  marginBottom: 32,
-                }}
-              >
-                <div
-                  style={{
-                    fontFamily: "var(--font-quicksand), system-ui, sans-serif",
-                    fontWeight: 700,
-                    fontSize: 22,
-                    color: "#6b7a44",
-                    background: "#dde2ce",
-                    padding: "12px 16px",
-                    borderRadius: 12,
-                    textAlign: "center",
-                    position: "relative",
-                    zIndex: 1,
-                  }}
-                >
-                  {x.y}
-                </div>
-                <div
-                  style={{
-                    background: "#ffffff",
-                    border: "1px solid #e8e4d4",
-                    borderRadius: 20,
-                    padding: "24px 28px",
-                    position: "relative",
-                  }}
-                >
-                  <div
-                    style={{
-                      position: "absolute",
-                      left: -12,
-                      top: 24,
-                      width: 0,
-                      height: 0,
-                      borderTop: "10px solid transparent",
-                      borderBottom: "10px solid transparent",
-                      borderRight: "12px solid #ffffff",
-                    }}
-                  />
-                  <h3 style={{ fontFamily: "var(--font-quicksand), system-ui, sans-serif", fontWeight: 600, fontSize: 22, margin: 0, color: "#1c2018", lineHeight: 1.2 }}>{x.t}</h3>
-                  <div style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 13, color: "#7a7f6b", marginTop: 4, fontWeight: 500 }}>{x.sub}</div>
-                  <p style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 15, lineHeight: 1.65, color: "#4a4f3f", margin: "14px 0 0" }}>{x.d}</p>
-                </div>
-                <div />
-              </div>
-            ))}
-            <div style={{ display: "grid", gridTemplateColumns: "88px 1fr 88px", gap: 32, alignItems: "flex-start", marginTop: 24 }}>
-              <div
-                style={{
-                  fontFamily: "var(--font-manrope), system-ui, sans-serif",
-                  fontWeight: 700,
-                  fontSize: 11,
-                  color: "#4a4f3f",
-                  background: "#f1ecdc",
-                  padding: "10px 12px",
-                  borderRadius: 12,
-                  textAlign: "center",
-                  letterSpacing: "0.08em",
-                  textTransform: "uppercase",
-                  position: "relative",
-                  zIndex: 1,
-                }}
-              >
-                En cours
-              </div>
-              <div
-                style={{
-                  background: "#f1ecdc",
-                  borderRadius: 20,
-                  padding: "24px 28px",
-                  border: "1px dashed #c9b78f",
-                }}
-              >
-                <h3 style={{ fontFamily: "var(--font-quicksand), system-ui, sans-serif", fontWeight: 600, fontSize: 22, margin: 0, color: "#1c2018", lineHeight: 1.2 }}>En formation continue</h3>
-                <p style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 15, lineHeight: 1.65, color: "#4a4f3f", margin: "12px 0 0" }}>
-                  Le comportement canin est un domaine en perpétuelle évolution. Se former en continu
-                  n&apos;est pas une option pour moi : c&apos;est une évidence, et un engagement envers
-                  vous et vos chiens.
-                </p>
-              </div>
-              <div />
-            </div>
-          </div>
-        </div>
-      </section>
+      <ParcoursSticky />
 
       {/* TRANSPARENCE */}
       <section
+        className="ap-section ap-transparence"
         style={{
-          padding: "110px 56px",
+          padding: "160px 56px",
           background: "#8f9e63",
           color: "#fbfaf4",
           position: "relative",
           overflow: "hidden",
         }}
       >
-        <PawPattern color="rgba(255,255,255,0.05)" density={0.4} />
+        <PawPattern color="rgba(255,255,255,0.10)" density={0.6} />
         <div style={{ maxWidth: 1100, margin: "0 auto", position: "relative" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 72, alignItems: "center" }}>
+          <div className="ap-transparence-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 72, alignItems: "center" }}>
             <div>
               <Eyebrow light>En toute transparence</Eyebrow>
               <h2
@@ -588,55 +409,28 @@ export default function AProposPage() {
               >
                 Une profession
                 <br />
-                <span
-                  style={{
-                    color: "#ebe2c8",
-                    fontFamily: "var(--font-lora), Georgia, serif",
-                    fontStyle: "italic",
-                    fontWeight: 500,
-                  }}
-                >
-                  non réglementée.
-                </span>
+                <span style={{ color: "#ebe2c8" }}>non réglementée.</span>
               </h2>
             </div>
             <div>
-              <p style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 18, lineHeight: 1.7, margin: 0, opacity: 0.95 }}>
+              <p style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 21, lineHeight: 1.7, margin: 0, opacity: 0.95 }}>
                 En France, le métier d&apos;éducateur canin est une{" "}
                 <strong>profession non réglementée</strong>. N&apos;importe qui peut s&apos;en
                 proclamer, sans formation ni diplôme, mais juste avec l&apos;acquisition de
                 l&apos;ACACED qui n&apos;apprend pas notre cœur de métier, mais autorise le droit
                 d&apos;exercer.
               </p>
-              <p style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 17, lineHeight: 1.7, margin: "20px 0 0", opacity: 0.88 }}>
+              <p style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 21, lineHeight: 1.7, margin: "24px 0 0", opacity: 0.88 }}>
                 C&apos;est une réalité que je trouve importante d&apos;aborder en toute transparence,
                 parce que <strong>vous méritez de savoir à qui vous confiez votre chien</strong>.
               </p>
-              <div style={{ display: "flex", gap: 10, marginTop: 28, flexWrap: "wrap" }}>
-                {["ACACED officiel", "Diplôme Qualiopi", "Méthodes positives", "Formation continue"].map((t, i) => (
-                  <span
-                    key={i}
-                    style={{
-                      padding: "8px 14px",
-                      borderRadius: 999,
-                      background: "rgba(255,255,255,0.1)",
-                      border: "1px solid rgba(255,255,255,0.2)",
-                      fontFamily: "var(--font-manrope), system-ui, sans-serif",
-                      fontSize: 13,
-                      fontWeight: 600,
-                    }}
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* ORIGINES */}
-      <section style={{ padding: "120px 56px", background: "#fbfaf4" }}>
+      <section className="ap-section" style={{ padding: "120px 56px", background: "#fbfaf4" }}>
         <div style={{ maxWidth: 1240, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 72, maxWidth: 800, marginLeft: "auto", marginRight: "auto" }}>
             <Eyebrow>Les origines de ma passion</Eyebrow>
@@ -653,16 +447,7 @@ export default function AProposPage() {
             >
               Trois chiens.
               <br />
-              <span
-                style={{
-                  color: "#6b7a44",
-                  fontFamily: "var(--font-lora), Georgia, serif",
-                  fontStyle: "italic",
-                  fontWeight: 500,
-                }}
-              >
-                Trois graines plantées.
-              </span>
+              <span style={{ color: "#6b7a44" }}>Trois graines plantées.</span>
             </h2>
             <p style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 17, lineHeight: 1.65, color: "#4a4f3f", marginTop: 24 }}>
               Ce métier n&apos;est pas tombé du ciel. Il s&apos;est construit, à travers trois
@@ -684,10 +469,11 @@ export default function AProposPage() {
                 yr: "Collège",
                 breed: "Westie",
                 tone: "cream" as const,
+                photo: "/hasko.png",
                 summary: "Le premier déclic. Le mal compris.",
-                body: "Au collège, mes parents ont adopté Hasko, un westie… qu'aujourd'hui je définirais de « mal compris ». Très vite, j'ai observé quelque chose que beaucoup de familles vivent sans oser en parler : se sentir dépassé par son chien.",
-                body2: "Les aboiements incessants épuisaient mes parents. Ils ont fait appel à un éducateur canin, sa solution : un collier électrique. « Ça ne fait pas si mal, c'est juste pour lui rappeler d'arrêter d'aboyer », disait-il. Ils lui ont fait confiance. Comme on le ferait avec n'importe quel professionnel. Moi, j'observais Hasko. Je ressentais la fragilité émotionnelle qui s'installait en lui. Parce qu'utiliser des outils coercitifs — collier électrique, étrangleurs, laisse lasso… — ont des réelles conséquences sur le chien.",
-                callout: "Respecter la sensibilité du chien, comprendre ses émotions, lui offrir un apprentissage bienveillant : ce n'était pas juste un choix. C'était une nécessité.",
+                body: "Adolescente, Hasko, un westie m'a fait réaliser quelque chose que beaucoup de familles vivent sans oser en parler : se sentir dépassé par son chien.",
+                body2: "Épuisés par ces aboiements incessants, mes parents ont fait appel à un éducateur canin, sa solution : un collier électrique. « Ça ne fait pas si mal, c'est juste pour lui rappeler d'arrêter d'aboyer », disait-il. Ils lui ont fait confiance. Comme on le ferait avec n'importe quel professionnel. Je ressentais la fragilité émotionnelle qui s'installait en lui. Parce qu'utiliser des outils coercitifs — collier électrique, étrangleurs, laisse lasso… — ont des réelles conséquences sur le chien.",
+                callout: "Respecter la sensibilité du chien, lui offrir un apprentissage bienveillant : ce n'était pas juste un choix. C'était une nécessité pour Hasko.",
                 callout_label: "Le premier déclic",
               },
               {
@@ -695,33 +481,44 @@ export default function AProposPage() {
                 yr: "À 21 ans",
                 breed: "Croisée labrador × border collie × husky",
                 tone: "sage" as const,
+                photo: "/laska.png",
                 summary: "La deuxième graine. L'empathie pour les dog parents.",
                 body: "À l'âge de 21 ans, Laska entrait dans ma vie. Elle avait 6 ans, lumineuse, et exceptionnelle…. Avec elle, j'ai vécu de l'intérieur ce que vivent tant de dog parents.",
                 body2: "Le rappel qui échoue, les interactions compliquées avec d'autres chiens, les moments où l'on veut sincèrement bien faire… sans savoir comment.",
-                callout: "Avec tout ce qu'on a vécu ensemble, tout ce qu'elle m'a appris… merci pour tout, ma fille. 🐾",
+                callout: "Avec tout ce qu'on a vécu ensemble, tout ce qu'elle m'a appris… merci pour tout, ma fille.",
                 callout_label: "À Laska",
               },
             ].map((s, i) => (
               <article
                 key={i}
+                className="ap-origines-card"
                 style={{
                   background: s.tone === "sage" ? "#8f9e63" : "#f1ecdc",
                   color: s.tone === "sage" ? "#fbfaf4" : "#1c2018",
                   borderRadius: 32,
-                  padding: "48px 56px",
+                  padding: "32px 40px",
                   display: "grid",
-                  gridTemplateColumns: "0.85fr 1.15fr",
-                  gap: 56,
+                  gridTemplateColumns: s.name === "Hasko" ? "1.45fr 0.55fr" : "0.55fr 1.45fr",
+                  gap: 40,
                   alignItems: "center",
                 }}
               >
-                <div style={{ order: i % 2 === 0 ? 0 : 1 }}>
-                  <div style={{ borderRadius: 24, overflow: "hidden" }}>
-                    <ImagePlaceholder
-                      tone={s.tone === "sage" ? "cream" : "sage"}
-                      aspect={1.1}
-                      label={`Photo ${s.name}`}
-                    />
+                <div className="ap-origines-photo" style={{ order: i % 2 === 0 ? 0 : 1, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <div style={{ borderRadius: 24, overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center", width: s.name === "Hasko" ? 340 : "100%" }}>
+                    {s.photo ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={s.photo}
+                        alt={`Photo ${s.name}`}
+                        style={{ width: "100%", height: "auto", display: "block" }}
+                      />
+                    ) : (
+                      <ImagePlaceholder
+                        tone={s.tone === "sage" ? "cream" : "sage"}
+                        aspect={1.1}
+                        label={`Photo ${s.name}`}
+                      />
+                    )}
                   </div>
                 </div>
                 <div>
@@ -747,7 +544,7 @@ export default function AProposPage() {
                     style={{
                       fontFamily: "var(--font-quicksand), system-ui, sans-serif",
                       fontWeight: 700,
-                      fontSize: "clamp(48px, 6vw, 80px)",
+                      fontSize: "clamp(36px, 4vw, 60px)",
                       margin: 0,
                       lineHeight: 0.95,
                       letterSpacing: "-0.02em",
@@ -759,24 +556,24 @@ export default function AProposPage() {
                     style={{
                       fontFamily: "var(--font-lora), Georgia, serif",
                       fontStyle: "italic",
-                      fontSize: 22,
+                      fontSize: 19,
                       lineHeight: 1.4,
                       fontWeight: 500,
-                      margin: "12px 0 0",
+                      margin: "8px 0 0",
                       color: s.tone === "sage" ? "#ebe2c8" : "#6b7a44",
                     }}
                   >
                     {s.summary}
                   </p>
-                  <div style={{ display: "flex", flexDirection: "column", gap: 14, marginTop: 24 }}>
-                    <p style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 16, lineHeight: 1.7, margin: 0, opacity: s.tone === "sage" ? 0.95 : 1 }}>{s.body}</p>
-                    {s.body2 && <p style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 15, lineHeight: 1.7, margin: 0, opacity: s.tone === "sage" ? 0.9 : 1 }}>{s.body2}</p>}
+                  <div style={{ display: "flex", flexDirection: "column", gap: 10, marginTop: 16 }}>
+                    <p style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 16, lineHeight: 1.65, margin: 0, opacity: s.tone === "sage" ? 0.95 : 1 }}>{s.body}</p>
+                    {s.body2 && <p style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 16, lineHeight: 1.65, margin: 0, opacity: s.tone === "sage" ? 0.9 : 1 }}>{s.body2}</p>}
                   </div>
                   {s.callout && (
                     <div
                       style={{
-                        marginTop: 28,
-                        padding: "20px 24px",
+                        marginTop: 16,
+                        padding: "14px 18px",
                         background: s.tone === "sage" ? "rgba(255,255,255,0.12)" : "#ffffff",
                         border: s.tone === "sage" ? "1px solid rgba(255,255,255,0.2)" : "1px solid #e8e4d4",
                         borderRadius: 18,
@@ -813,79 +610,46 @@ export default function AProposPage() {
               </article>
             ))}
 
-            {/* Pivot */}
-            <div
-              style={{
-                marginTop: 32,
-                background: "#8f9e63",
-                color: "#fbfaf4",
-                borderRadius: 32,
-                padding: "56px 64px",
-                display: "grid",
-                gridTemplateColumns: "1fr 1.4fr",
-                gap: 56,
-                alignItems: "center",
-              }}
-            >
-              <div>
-                <div style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 11, color: "rgba(255,255,255,0.7)", fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", marginBottom: 14 }}>
-                  Le passage à l&apos;acte
-                </div>
-                <h3
-                  style={{
-                    fontFamily: "var(--font-quicksand), system-ui, sans-serif",
-                    fontWeight: 600,
-                    fontSize: 44,
-                    margin: 0,
-                    lineHeight: 1,
-                    letterSpacing: "-0.02em",
-                  }}
-                >
-                  Après le commerce,
-                  <br />
-                  <span
-                    style={{
-                      color: "#ebe2c8",
-                      fontFamily: "var(--font-lora), Georgia, serif",
-                      fontStyle: "italic",
-                      fontWeight: 500,
-                    }}
-                  >
-                    l&apos;évidence.
-                  </span>
-                </h3>
-              </div>
-              <div>
-                <p style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 17, lineHeight: 1.7, margin: 0, opacity: 0.95 }}>
-                  Après quelques années dans le commerce, une évidence s&apos;est imposée : je
-                  passais à côté de l&apos;essentiel. Travailler sans sens, sans impact réel…{" "}
-                  <strong>J&apos;avais besoin de me sentir profondément utile.</strong>
-                </p>
-                <p style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 17, lineHeight: 1.7, margin: "18px 0 0", opacity: 0.88 }}>
-                  Chaque année en France, des milliers de chiens sont abandonnés. Des dog parents se
-                  sont sentis seuls, dépassés, sans clés pour comprendre et agir. Un comportement mal
-                  compris, une situation qui s&apos;emballe, et tout un lien qui se fragilise…
-                </p>
-                <p
-                  style={{
-                    fontFamily: "var(--font-lora), Georgia, serif",
-                    fontStyle: "italic",
-                    fontSize: 19,
-                    lineHeight: 1.55,
-                    margin: "20px 0 0",
-                    color: "#ebe2c8",
-                    fontWeight: 500,
-                  }}
-                >
-                  C&apos;est exactement là que je voulais être. Il ne manquait plus qu&apos;un nom
-                  pour tout ça… C&apos;est ainsi qu&apos;est née{" "}
-                  <strong style={{ fontStyle: "normal", fontWeight: 700, color: "#fbfaf4" }}>
-                    Nova Lien
-                  </strong>
-                  .
-                </p>
-              </div>
-            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PIVOT */}
+      <section className="ap-section ap-section-tall" style={{ minHeight: "100vh", background: "#f1ecdc", display: "flex", alignItems: "center", padding: "120px 56px" }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto", width: "100%" }}>
+          <Eyebrow>Le passage à l&apos;acte</Eyebrow>
+          <h2
+            style={{
+              fontFamily: "var(--font-quicksand), system-ui, sans-serif",
+              fontWeight: 600,
+              fontSize: "clamp(44px, 5.5vw, 72px)",
+              lineHeight: 1,
+              color: "#1c2018",
+              margin: 0,
+              letterSpacing: "-0.02em",
+              maxWidth: 900,
+            }}
+          >
+            Après le commerce,
+            <br />
+            <span style={{ color: "#6b7a44" }}>l&apos;évidence.</span>
+          </h2>
+          <div style={{ marginTop: 56, maxWidth: 640 }}>
+            <p style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 18, lineHeight: 1.75, margin: 0, color: "#4a4f3f" }}>
+              Après quelques années dans le commerce, une évidence s&apos;est imposée : je
+              passais à côté de l&apos;essentiel. Travailler sans sens, sans impact réel…{" "}
+              <strong>J&apos;avais besoin de me sentir profondément utile.</strong>
+            </p>
+            <p style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 17, lineHeight: 1.75, margin: "20px 0 0", color: "#4a4f3f" }}>
+              Chaque année en France, des milliers de chiens sont abandonnés. Des dog parents se
+              sont sentis seuls, dépassés, sans clés pour comprendre et agir. Un comportement mal
+              compris, une situation qui s&apos;emballe, et tout un lien qui se fragilise…
+            </p>
+            <p style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 17, lineHeight: 1.75, margin: "20px 0 0", color: "#4a4f3f" }}>
+              C&apos;est exactement là que je voulais être. Il ne manquait plus qu&apos;un nom
+              pour tout ça… C&apos;est ainsi qu&apos;est née{" "}
+              <strong style={{ fontWeight: 700, color: "#6b7a44" }}>Nova Lien</strong>.
+            </p>
           </div>
         </div>
       </section>
@@ -894,13 +658,14 @@ export default function AProposPage() {
       <Meaning />
 
       {/* CTA */}
-      <section style={{ padding: "110px 56px", background: "#fbfaf4" }}>
+      <section className="ap-section" style={{ padding: "110px 56px", background: "#fbfaf4" }}>
         <div
+          className="ap-cta-card"
           style={{
             maxWidth: 1100,
             margin: "0 auto",
-            background: "#8f9e63",
-            color: "#fbfaf4",
+            background: "#f1ecdc",
+            color: "#1c2018",
             borderRadius: 36,
             padding: "72px 64px",
             display: "grid",
@@ -911,9 +676,8 @@ export default function AProposPage() {
             overflow: "hidden",
           }}
         >
-          <PawPattern color="rgba(255,255,255,0.04)" density={0.4} />
           <div style={{ position: "relative" }}>
-            <Eyebrow light>Tu te reconnais dans tout ça ?</Eyebrow>
+            <Eyebrow>Tu te reconnais dans tout ça ?</Eyebrow>
             <h2
               style={{
                 fontFamily: "var(--font-quicksand), system-ui, sans-serif",
@@ -926,18 +690,11 @@ export default function AProposPage() {
             >
               On en parle ?
               <br />
-              <span
-                style={{
-                  color: "#dde2ce",
-                  fontFamily: "var(--font-lora), Georgia, serif",
-                  fontStyle: "italic",
-                  fontWeight: 500,
-                }}
-              >
+              <span style={{ color: "#6b7a44" }}>
                 Sans engagement.
               </span>
             </h2>
-            <p style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 16, lineHeight: 1.65, margin: "24px 0 0", opacity: 0.88, maxWidth: 420 }}>
+            <p style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 16, lineHeight: 1.65, margin: "24px 0 0", color: "#4a4f3f", maxWidth: 420 }}>
               Une question, un doute, l&apos;envie d&apos;en savoir plus ? Remplissez le formulaire
               de premier contact, je vous réponds sous 48&nbsp;h.
             </p>
@@ -946,8 +703,8 @@ export default function AProposPage() {
             <Link
               href="/contact"
               style={{
-                background: "#fbfaf4",
-                color: "#1c2018",
+                background: "#8f9e63",
+                color: "#fbfaf4",
                 fontFamily: "var(--font-manrope), system-ui, sans-serif",
                 fontWeight: 600,
                 fontSize: 15,
@@ -965,8 +722,8 @@ export default function AProposPage() {
                   width: 28,
                   height: 28,
                   borderRadius: 99,
-                  background: "#8f9e63",
-                  color: "#fbfaf4",
+                  background: "#fbfaf4",
+                  color: "#6b7a44",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -981,8 +738,8 @@ export default function AProposPage() {
             <Link
               href="/services"
               style={{
-                background: "rgba(255,255,255,0.12)",
-                color: "#fbfaf4",
+                background: "rgba(143,158,99,0.12)",
+                color: "#1c2018",
                 fontFamily: "var(--font-manrope), system-ui, sans-serif",
                 fontWeight: 600,
                 fontSize: 15,
@@ -992,11 +749,11 @@ export default function AProposPage() {
                 justifyContent: "space-between",
                 alignItems: "center",
                 textDecoration: "none",
-                border: "1px solid rgba(255,255,255,0.2)",
+                border: "1px solid rgba(143,158,99,0.25)",
               }}
             >
               <span>Voir mes prestations</span>
-              <span style={{ fontSize: 18 }}>→</span>
+              <span style={{ fontSize: 18, color: "#6b7a44" }}>→</span>
             </Link>
           </div>
         </div>

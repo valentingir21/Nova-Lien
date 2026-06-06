@@ -201,7 +201,7 @@ export default function ServicesPage() {
               overflow: "hidden",
             }}
           >
-            <PawPattern color="rgba(255,255,255,0.05)" density={0.4} />
+            <PawPattern color="rgba(255,255,255,0.10)" density={0.6} />
             <div style={{ position: "relative" }}>
               <div
                 style={{
@@ -1188,7 +1188,7 @@ export default function ServicesPage() {
             overflow: "hidden",
           }}
         >
-          <PawPattern color="rgba(255,255,255,0.04)" density={0.4} />
+          <PawPattern color="rgba(255,255,255,0.09)" density={0.6} />
           <div style={{ position: "relative" }}>
             <Eyebrow light>Pas sûr·e ?</Eyebrow>
             <h2

@@ -12,7 +12,7 @@ export default function Meaning() {
         color: "#fbfaf4",
       }}
     >
-      <PawPattern color="rgba(255,255,255,0.07)" density={0.5} />
+      <PawPattern color="rgba(255,255,255,0.11)" density={0.7} />
       <div style={{ maxWidth: 1100, margin: "0 auto", textAlign: "center", position: "relative" }}>
         <Eyebrow light>Pourquoi Nova Lien ?</Eyebrow>
         <div

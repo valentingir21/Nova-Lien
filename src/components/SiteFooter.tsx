@@ -20,14 +20,7 @@ export default function SiteFooter() {
           >
             Comprendre votre chien.
             <br />
-            <span
-              style={{
-                color: "#dde2ce",
-                fontFamily: "var(--font-lora), Georgia, serif",
-                fontStyle: "italic",
-                fontWeight: 500,
-              }}
-            >
+            <span style={{ color: "#dde2ce" }}>
               Renforcer votre lien.
             </span>
           </div>

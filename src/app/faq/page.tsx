@@ -94,7 +94,7 @@ function SeligmanAnswer() {
           overflow: "hidden",
         }}
       >
-        <PawPattern color="rgba(255,255,255,0.05)" density={0.3} />
+        <PawPattern color="rgba(255,255,255,0.10)" density={0.5} />
         <div style={{ position: "relative" }}>
           <div style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", opacity: 0.85, marginBottom: 12 }}>
             Ce que la science nous dit

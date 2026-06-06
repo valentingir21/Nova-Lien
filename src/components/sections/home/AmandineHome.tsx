@@ -111,10 +111,7 @@ export default function AmandineHome() {
                 maxWidth: 520,
               }}
             >
-              Après quelques années dans le commerce, une évidence s&apos;est imposée : j&apos;avais
-              besoin de me sentir <strong>profondément utile</strong>. Accompagner les dog parents,
-              aider les chiens à s&apos;épanouir, contribuer à faire reculer les abandons évitables.{" "}
-              <em style={{ fontStyle: "italic" }}>C&apos;est là que je voulais être.</em>
+              Attentive aux émotions et besoins de ton chien et toi.
             </p>
 
             <div
@@ -194,7 +191,7 @@ export default function AmandineHome() {
                 textDecoration: "none",
               }}
             >
-              Lire mon parcours complet →
+              En savoir plus sur moi →
             </Link>
           </div>
         </div>

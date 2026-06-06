@@ -10,10 +10,10 @@ export default function Eyebrow({ children, light, className }: EyebrowProps) {
       className={className}
       style={{
         fontFamily: "var(--font-manrope), system-ui, sans-serif",
-        fontSize: 13,
-        color: light ? "rgba(255,255,255,0.85)" : "#6b7a44",
-        fontWeight: 600,
-        letterSpacing: "0.08em",
+        fontSize: 20,
+        color: light ? "rgba(255,255,255,0.95)" : "#6b7a44",
+        fontWeight: 700,
+        letterSpacing: "0.1em",
         textTransform: "uppercase",
         marginBottom: 18,
       }}

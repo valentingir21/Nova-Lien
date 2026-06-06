@@ -33,7 +33,10 @@ const timeLabels: Record<string, string> = {
 };
 
 export async function POST(req: NextRequest) {
-  const resend = new Resend(process.env.RESEND_API_KEY ?? "");
+  if (!process.env.RESEND_API_KEY) {
+    return NextResponse.json({ error: "Email service not configured" }, { status: 503 });
+  }
+  const resend = new Resend(process.env.RESEND_API_KEY);
   let body: unknown;
   try {
     body = await req.json();
