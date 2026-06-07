@@ -24,11 +24,11 @@ const sections = [
       },
       {
         q: "Pourquoi faire appel à un éducateur canin ?",
-        a: "Parce que vous n'avez pas à gérer ça seul·e. Avoir un chien, c'est merveilleux — mais ce n'est pas inné. Comprendre son langage, ses besoins, ses émotions… ça s'apprend. Un éducateur canin vous apporte un regard extérieur, des clés concrètes et un accompagnement adapté à votre situation. Faire appel à un professionnel, ce n'est pas un aveu d'échec — c'est un acte d'amour envers votre chien.",
+        a: "Parce que vous n'avez pas à gérer ça seul·e. Avoir un chien, c'est merveilleux, mais ce n'est pas inné. Comprendre son langage, ses besoins, ses émotions… ça s'apprend. Un éducateur canin vous apporte un regard extérieur, des clés concrètes et un accompagnement adapté à votre situation. Faire appel à un professionnel, ce n'est pas un aveu d'échec, c'est un acte d'amour envers votre chien.",
       },
       {
         q: "Travaillez-vous avec toutes les races ?",
-        a: "Oui, sans exception. Chaque race a ses particularités, ses instincts, ses besoins spécifiques — et c'est précisément ce dont je tiens compte pour personnaliser chaque accompagnement. Qu'il s'agisse d'un chihuahua ou d'un malinois, d'un bouledogue ou d'un border collie, chaque chien mérite une approche adaptée à ce qu'il est.",
+        a: "Oui, sans exception. Chaque race a ses particularités, ses instincts, ses besoins spécifiques, et c'est précisément ce dont je tiens compte pour personnaliser chaque accompagnement. Qu'il s'agisse d'un chihuahua ou d'un malinois, d'un bouledogue ou d'un border collie, chaque chien mérite une approche adaptée à ce qu'il est.",
       },
     ],
   },
@@ -46,7 +46,7 @@ const sections = [
       },
       {
         q: "Vous déplacez-vous partout ?",
-        a: "J'interviens dans le secteur de Dijon et ses alentours (rayon de 30 km environ). En cas de doute sur votre localisation, n'hésitez pas à me contacter directement — je ferai mon possible pour trouver une solution.",
+        a: "J'interviens dans le secteur de Dijon et ses alentours (rayon de 30 km environ). En cas de doute sur votre localisation, n'hésitez pas à me contacter directement, je ferai mon possible pour trouver une solution.",
       },
     ],
   },
@@ -56,16 +56,16 @@ function SeligmanAnswer() {
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
       <p style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 16, lineHeight: 1.75, color: "#4a4f3f", margin: 0 }}>
-        <strong>Oui, et c&apos;est même scientifiquement prouvé.</strong> Les méthodes positives sont
-        basées sur la compréhension du comportement canin et le renforcement de ce que le chien fait
-        bien, plutôt que la punition de ce qu&apos;il fait mal.
+        <strong>Oui, et c&apos;est même scientifiquement prouvé.</strong>{" "}
+        Les méthodes positives sont basées sur la compréhension du comportement canin et le
+        renforcement de ce que le chien fait bien, plutôt que la punition de ce qu&apos;il fait mal.
       </p>
       <p style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 16, lineHeight: 1.75, color: "#4a4f3f", margin: 0 }}>
         Un chien qui apprend dans un cadre bienveillant est un chien plus motivé, plus confiant, et
-        dont les acquis sont bien plus durables. La punition peut stopper un comportement en surface —
-        elle n&apos;en traite jamais la cause.
+        dont les acquis sont bien plus durables. La punition peut stopper un comportement en surface.
+        Elle n&apos;en traite jamais la cause.
       </p>
-      <div style={{ background: "#f1ecdc", borderRadius: 18, padding: "20px 24px", borderLeft: "3px solid #c9b78f" }}>
+      <div style={{ background: "#f1ecdc", borderRadius: 18, padding: "20px 24px", borderLeft: "3px solid #8f9e63" }}>
         <div style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 11, color: "#4a4f3f", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: 10 }}>
           L&apos;objection fréquente
         </div>
@@ -75,7 +75,7 @@ function SeligmanAnswer() {
         </p>
       </div>
       <p style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 16, lineHeight: 1.75, color: "#4a4f3f", margin: 0 }}>
-        Effectivement, on observe que le comportement s&apos;arrête — mais à quel prix ? Ce qu&apos;on
+        Effectivement, on observe que le comportement s&apos;arrête, mais à quel prix ? Ce qu&apos;on
         prend pour de l&apos;obéissance s&apos;appelle en réalité de l&apos;
         <strong>inhibition</strong>. Le chien n&apos;a pas compris. Il n&apos;a pas appris. Il a eu
         peur. Il cesse d&apos;agir non parce qu&apos;il a fait un bon choix, mais parce qu&apos;il{" "}
@@ -104,14 +104,14 @@ function SeligmanAnswer() {
           </h4>
           <p style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 15, lineHeight: 1.7, margin: "14px 0 0", opacity: 0.95 }}>
             Dans les années 1960, le psychologue américain Martin Seligman a mené une expérience
-            fondatrice sur le comportement animal face à la contrainte — étudiant l&apos;apprentissage,
+            fondatrice sur le comportement animal face à la contrainte, étudiant l&apos;apprentissage,
             la motivation, et ce qui se passe quand un être vivant perd tout sentiment de contrôle sur
             sa situation.
           </p>
 
-          <div style={{ marginTop: 24, padding: "20px 22px", background: "rgba(255,255,255,0.1)", borderRadius: 16 }}>
-            <div style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", opacity: 0.85, marginBottom: 14 }}>
-              Étape 1 — Trois groupes de chiens observés
+          <div style={{ marginTop: 24, padding: "20px 22px", background: "#f1ecdc", borderRadius: 16 }}>
+            <div style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "#6b7a44", marginBottom: 14 }}>
+              Étape 1 : Trois groupes de chiens observés
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
               {[
@@ -120,36 +120,36 @@ function SeligmanAnswer() {
                 { n: "G3", t: "Groupe sans contrôle", d: "Attaché et soumis aux mêmes décharges, sans aucun moyen d'y échapper." },
               ].map((g) => (
                 <div key={g.n} style={{ display: "grid", gridTemplateColumns: "40px 1fr", gap: 12, alignItems: "flex-start" }}>
-                  <div style={{ width: 32, height: 32, borderRadius: 8, background: "rgba(255,255,255,0.15)", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "var(--font-quicksand), system-ui, sans-serif", fontWeight: 700, fontSize: 13, flexShrink: 0 }}>
+                  <div style={{ width: 32, height: 32, borderRadius: 8, background: "#dde2ce", color: "#6b7a44", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "var(--font-quicksand), system-ui, sans-serif", fontWeight: 700, fontSize: 13, flexShrink: 0 }}>
                     {g.n}
                   </div>
                   <div>
-                    <div style={{ fontFamily: "var(--font-quicksand), system-ui, sans-serif", fontWeight: 600, fontSize: 15 }}>{g.t}</div>
-                    <div style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 13.5, lineHeight: 1.55, opacity: 0.92, marginTop: 2 }}>{g.d}</div>
+                    <div style={{ fontFamily: "var(--font-quicksand), system-ui, sans-serif", fontWeight: 600, fontSize: 15, color: "#1c2018" }}>{g.t}</div>
+                    <div style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 13.5, lineHeight: 1.55, color: "#4a4f3f", marginTop: 2 }}>{g.d}</div>
                   </div>
                 </div>
               ))}
             </div>
           </div>
 
-          <div style={{ marginTop: 16, padding: "20px 22px", background: "rgba(255,255,255,0.1)", borderRadius: 16 }}>
-            <div style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", opacity: 0.85, marginBottom: 14 }}>
-              Étape 2 — Résultat
+          <div style={{ marginTop: 16, padding: "20px 22px", background: "#ffffff", borderRadius: 16, border: "1px solid #e8e4d4" }}>
+            <div style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "#6b7a44", marginBottom: 14 }}>
+              Étape 2 : Résultat
             </div>
-            <p style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 14, lineHeight: 1.65, opacity: 0.95, marginBottom: 14 }}>
+            <p style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 14, lineHeight: 1.65, color: "#4a4f3f", marginBottom: 14 }}>
               Les deux groupes sont placés dans une cage divisée en deux compartiments par un muret : d&apos;un côté le sol est électrifié, de l&apos;autre non. Il suffit de franchir le muret pour échapper aux décharges.
             </p>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
-              <div style={{ padding: "14px 16px", background: "rgba(255,255,255,0.1)", borderRadius: 12 }}>
-                <div style={{ fontFamily: "var(--font-quicksand), system-ui, sans-serif", fontWeight: 600, fontSize: 15, marginBottom: 4 }}>Groupe 2</div>
-                <div style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 13, lineHeight: 1.55, opacity: 0.92 }}>
-                  Ayant appris qu&apos;il pouvait agir — il tente, comprend, saute. <strong>Liberté retrouvée.</strong>
+              <div style={{ padding: "14px 16px", background: "#f1ecdc", borderRadius: 12 }}>
+                <div style={{ fontFamily: "var(--font-quicksand), system-ui, sans-serif", fontWeight: 600, fontSize: 15, marginBottom: 4, color: "#1c2018" }}>Groupe 2</div>
+                <div style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 13, lineHeight: 1.55, color: "#4a4f3f" }}>
+                  Ayant appris qu&apos;il pouvait agir, il tente, comprend, saute. <strong style={{ color: "#1c2018" }}>Liberté retrouvée.</strong>
                 </div>
               </div>
-              <div style={{ padding: "14px 16px", background: "rgba(0,0,0,0.18)", borderRadius: 12 }}>
-                <div style={{ fontFamily: "var(--font-quicksand), system-ui, sans-serif", fontWeight: 600, fontSize: 15, marginBottom: 4 }}>Groupe 3</div>
-                <div style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 13, lineHeight: 1.55, opacity: 0.92 }}>
-                  N&apos;essaie même pas. Il s&apos;allonge et subit. <strong>Il a appris qu&apos;il n&apos;avait aucun pouvoir.</strong>
+              <div style={{ padding: "14px 16px", background: "#f1ecdc", borderRadius: 12 }}>
+                <div style={{ fontFamily: "var(--font-quicksand), system-ui, sans-serif", fontWeight: 600, fontSize: 15, marginBottom: 4, color: "#1c2018" }}>Groupe 3</div>
+                <div style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 13, lineHeight: 1.55, color: "#4a4f3f" }}>
+                  N&apos;essaie même pas. Il s&apos;allonge et subit. <strong style={{ color: "#1c2018" }}>Il a appris qu&apos;il n&apos;avait aucun pouvoir.</strong>
                 </div>
               </div>
             </div>
@@ -194,9 +194,9 @@ function LanguageAnswer() {
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
       <p style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 16, lineHeight: 1.75, color: "#4a4f3f", margin: 0 }}>
-        <strong>Oui, et c&apos;est même essentiel !</strong> Une séance avec moi pose les bases et vous
-        donne les outils — mais c&apos;est la <em>pratique régulière au quotidien</em> qui fait vraiment
-        la différence.
+        <strong>Oui, et c&apos;est même essentiel !</strong>{" "}
+        Une séance avec moi pose les bases et vous donne les outils, mais c&apos;est la{" "}
+        <em>pratique régulière au quotidien</em> qui fait vraiment la différence.
       </p>
       <div style={{ background: "#f1ecdc", borderRadius: 18, padding: "24px 28px" }}>
         <div style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif", fontSize: 11, color: "#6b7a44", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: 14 }}>
@@ -298,24 +298,6 @@ export default function FAQPage() {
       {/* HERO */}
       <section style={{ padding: "70px 56px 80px", background: "#fbfaf4" }}>
         <div style={{ maxWidth: 1240, margin: "0 auto" }}>
-          <div
-            style={{
-              display: "inline-flex",
-              gap: 10,
-              alignItems: "center",
-              padding: "8px 16px",
-              borderRadius: 999,
-              background: "#ffffff",
-              border: "1px solid #e8e4d4",
-              fontFamily: "var(--font-manrope), system-ui, sans-serif",
-              fontSize: 13,
-              fontWeight: 500,
-              color: "#4a4f3f",
-            }}
-          >
-            <span style={{ width: 6, height: 6, borderRadius: 99, background: "#8f9e63", flexShrink: 0 }} />
-            Foire aux questions
-          </div>
           <h1
             style={{
               fontFamily: "var(--font-quicksand), system-ui, sans-serif",
@@ -417,9 +399,6 @@ export default function FAQPage() {
             <span
               style={{
                 color: "#6b7a44",
-                fontFamily: "var(--font-lora), Georgia, serif",
-                fontStyle: "italic",
-                fontWeight: 500,
               }}
             >
               Écris-moi.

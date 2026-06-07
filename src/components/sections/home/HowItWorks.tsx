@@ -1,58 +1,61 @@
 import Eyebrow from "@/components/ui/Eyebrow";
-import CheckIcon from "@/components/ui/CheckIcon";
-
-const lieux = [
-  { l: "À votre domicile", d: "Travailler dans l'environnement du quotidien" },
-  { l: "En extérieur", d: "Nature, ville, balades structurées" },
-  { l: "Sur terrain clôturé privé", d: 'Ahuy – terrain partenaire « De la main à la patte 21 »' },
-];
 
 export default function HowItWorks() {
   return (
-    <section style={{ padding: "120px 56px", background: "#f1ecdc" }}>
-      <div style={{ maxWidth: 1240, margin: "0 auto" }}>
-        <div style={{ textAlign: "center", marginBottom: 64 }}>
+    <section
+      style={{
+        minHeight: "calc(100vh - 96px)",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        padding: "48px 56px",
+        background: "#f1ecdc",
+      }}
+    >
+      <div style={{ maxWidth: 1240, margin: "0 auto", width: "100%" }}>
+        <div style={{ textAlign: "center", marginBottom: 40 }}>
           <Eyebrow>Le déroulé</Eyebrow>
           <h2
             style={{
               fontFamily: "var(--font-quicksand), system-ui, sans-serif",
               fontWeight: 600,
-              fontSize: "clamp(44px, 5vw, 64px)",
-              lineHeight: 1,
-              color: "#1c2018",
+              fontSize: "clamp(44px, 6vw, 80px)",
+              lineHeight: 1.02,
               margin: 0,
-              letterSpacing: "-0.02em",
+              letterSpacing: "-0.03em",
             }}
           >
-            Comment se passe
+            <span style={{ color: "#1c2018" }}>Comment se passe</span>
             <br />
-            un accompagnement&nbsp;?
+            <span style={{ color: "#6b7a44" }}>un accompagnement&nbsp;?</span>
           </h2>
           <p
             style={{
               fontFamily: "var(--font-manrope), system-ui, sans-serif",
-              fontSize: 17,
-              lineHeight: 1.65,
+              fontSize: 16,
+              lineHeight: 1.6,
               color: "#4a4f3f",
-              maxWidth: 620,
-              margin: "24px auto 0",
+              maxWidth: 600,
+              margin: "16px auto 0",
             }}
           >
-            Je me déplace chez vous, dans votre environnement de tous les jours — c&apos;est là que
+            Je me déplace chez vous, dans votre environnement de tous les jours. C&apos;est là que
             j&apos;analyse votre chien au plus proche de votre quotidien.
           </p>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
           {/* Bilan */}
           <div
             style={{
               background: "#8f9e63",
               color: "#fbfaf4",
               borderRadius: 28,
-              padding: 36,
+              padding: "34px 28px",
               position: "relative",
               overflow: "hidden",
+              display: "flex",
+              flexDirection: "column",
             }}
           >
             <div
@@ -97,21 +100,22 @@ export default function HowItWorks() {
               style={{
                 fontFamily: "var(--font-quicksand), system-ui, sans-serif",
                 fontWeight: 600,
-                fontSize: 38,
+                fontSize: 30,
                 margin: 0,
                 lineHeight: 1.05,
                 letterSpacing: "-0.01em",
               }}
             >
-              Le bilan comportemental
+              Bilan comportemental
             </h3>
             <p
               style={{
                 fontFamily: "var(--font-manrope), system-ui, sans-serif",
-                fontSize: 15,
-                lineHeight: 1.65,
+                fontSize: 14,
+                lineHeight: 1.6,
                 opacity: 0.92,
                 marginTop: 16,
+                flex: 1,
               }}
             >
               Une rencontre d&apos;environ{" "}
@@ -121,7 +125,7 @@ export default function HowItWorks() {
             </p>
             <div
               style={{
-                marginTop: 24,
+                marginTop: 28,
                 padding: "16px 20px",
                 background: "rgba(255,255,255,0.12)",
                 borderRadius: 16,
@@ -167,7 +171,9 @@ export default function HowItWorks() {
               background: "#ffffff",
               border: "1px solid #e8e4d4",
               borderRadius: 28,
-              padding: 36,
+              padding: "34px 28px",
+              display: "flex",
+              flexDirection: "column",
             }}
           >
             <div
@@ -213,90 +219,31 @@ export default function HowItWorks() {
               style={{
                 fontFamily: "var(--font-quicksand), system-ui, sans-serif",
                 fontWeight: 600,
-                fontSize: 38,
+                fontSize: 30,
                 margin: 0,
                 lineHeight: 1.05,
                 color: "#1c2018",
                 letterSpacing: "-0.01em",
               }}
             >
-              Les séances de suivi
+              Séance individuelle
             </h3>
             <p
               style={{
                 fontFamily: "var(--font-manrope), system-ui, sans-serif",
-                fontSize: 15,
-                lineHeight: 1.65,
+                fontSize: 14,
+                lineHeight: 1.6,
                 color: "#4a4f3f",
                 marginTop: 16,
+                flex: 1,
               }}
             >
-              Au rythme adapté à votre progression. Selon la problématique, j&apos;ajuste le{" "}
-              <strong>lieu de travail</strong> pour que chaque séance soit la plus efficace possible.
+              Chaque chien est unique, chaque séance l&apos;est aussi. Elle prolonge ce que révèle
+              le bilan, et s&apos;ajuste à votre rythme.
             </p>
             <div
               style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: 10,
-                marginTop: 20,
-              }}
-            >
-              {lieux.map((x, i) => (
-                <div
-                  key={i}
-                  style={{
-                    display: "grid",
-                    gridTemplateColumns: "24px 1fr",
-                    gap: 12,
-                    alignItems: "flex-start",
-                    padding: "10px 0",
-                    borderBottom: i < 2 ? "1px solid #e8e4d4" : "none",
-                  }}
-                >
-                  <div
-                    style={{
-                      width: 22,
-                      height: 22,
-                      borderRadius: 8,
-                      background: "#dde2ce",
-                      color: "#6b7a44",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      flexShrink: 0,
-                    }}
-                  >
-                    <CheckIcon size={14} color="#6b7a44" />
-                  </div>
-                  <div>
-                    <div
-                      style={{
-                        fontFamily: "var(--font-quicksand), system-ui, sans-serif",
-                        fontWeight: 600,
-                        fontSize: 14,
-                        color: "#1c2018",
-                      }}
-                    >
-                      {x.l}
-                    </div>
-                    <div
-                      style={{
-                        fontFamily: "var(--font-manrope), system-ui, sans-serif",
-                        fontSize: 12,
-                        color: "#7a7f6b",
-                        marginTop: 1,
-                      }}
-                    >
-                      {x.d}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div
-              style={{
-                marginTop: 20,
+                marginTop: 28,
                 padding: "16px 20px",
                 background: "#f7f2e3",
                 borderRadius: 16,
@@ -342,7 +289,7 @@ export default function HowItWorks() {
                 marginTop: 10,
               }}
             >
-              Forfaits disponibles — paiement échelonnable.
+              Forfaits disponibles – acompte de 30&nbsp;%.
             </div>
           </div>
         </div>

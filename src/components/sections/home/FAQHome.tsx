@@ -7,19 +7,19 @@ import { useState } from "react";
 const items = [
   {
     q: "Est-ce que les méthodes positives fonctionnent vraiment ?",
-    a: "Oui, et c'est scientifiquement prouvé. Les méthodes positives renforcent ce que le chien fait bien, plutôt que de punir ce qu'il fait mal. Un chien qui apprend dans un cadre bienveillant est plus motivé, plus confiant, et ses acquis sont plus durables. La punition peut stopper un comportement en surface — elle n'en traite jamais la cause.",
+    a: "Oui, et c'est scientifiquement prouvé. Les méthodes positives renforcent ce que le chien fait bien, plutôt que de punir ce qu'il fait mal. Un chien qui apprend dans un cadre bienveillant est plus motivé, plus confiant, et ses acquis sont plus durables. La punition peut stopper un comportement en surface. Elle n'en traite jamais la cause.",
   },
   {
     q: "À partir de quel âge peut-on éduquer un chien ?",
     a: "Dès les premières semaines de vie ! Plus tôt on pose des bases solides, plus c'est facile pour lui et pour vous. Mais il n'est jamais trop tard non plus : un chien adulte ou senior est tout à fait capable d'apprendre. L'âge n'est pas un obstacle, juste un contexte qu'on prend en compte.",
   },
   {
-    q: "Mon chien est très têtu — est-ce utile de faire un suivi ?",
+    q: "Mon chien est très têtu, est-ce utile de faire un suivi ?",
     a: "Être têtu, ça n'existe pas vraiment chez le chien. Ce qu'on perçoit comme de l'entêtement est souvent un manque de motivation, une incompréhension, un besoin non satisfait. Les chiens les plus « difficiles » ont souvent juste besoin d'être compris.",
   },
   {
     q: "Combien de séances faut-il en moyenne ?",
-    a: "Ça dépend de votre situation, de la problématique et de votre investissement. Certains duos progressent rapidement en quelques séances, d'autres ont besoin d'un accompagnement plus long. C'est pour ça que tout commence par un bilan comportemental — pour évaluer vos besoins et proposer un programme réaliste.",
+    a: "Ça dépend de votre situation, de la problématique et de votre investissement. Certains duos progressent rapidement en quelques séances, d'autres ont besoin d'un accompagnement plus long. C'est pour ça que tout commence par un bilan comportemental, pour évaluer vos besoins et proposer un programme réaliste.",
   },
 ];
 

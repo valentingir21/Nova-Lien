@@ -23,24 +23,6 @@ export default function ContactPage() {
       {/* HERO */}
       <section style={{ padding: "70px 56px 60px", background: "#fbfaf4" }}>
         <div style={{ maxWidth: 1240, margin: "0 auto" }}>
-          <div
-            style={{
-              display: "inline-flex",
-              gap: 10,
-              alignItems: "center",
-              padding: "8px 16px",
-              borderRadius: 999,
-              background: "#ffffff",
-              border: "1px solid #e8e4d4",
-              fontFamily: "var(--font-manrope), system-ui, sans-serif",
-              fontSize: 13,
-              fontWeight: 500,
-              color: "#4a4f3f",
-            }}
-          >
-            <span style={{ width: 6, height: 6, borderRadius: 99, background: "#8f9e63", flexShrink: 0 }} />
-            Me contacter
-          </div>
           <h1
             style={{
               fontFamily: "var(--font-quicksand), system-ui, sans-serif",
@@ -54,14 +36,7 @@ export default function ContactPage() {
           >
             Comprendre votre chien,
             <br />
-            <span
-              style={{
-                color: "#6b7a44",
-                fontFamily: "var(--font-lora), Georgia, serif",
-                fontStyle: "italic",
-                fontWeight: 500,
-              }}
-            >
+            <span style={{ color: "#6b7a44" }}>
               renforcer votre lien.
             </span>
           </h1>
@@ -207,110 +182,98 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Map placeholder */}
+            {/* Map */}
             <div
               style={{
                 position: "relative",
                 aspectRatio: "4 / 3",
                 borderRadius: 28,
                 overflow: "hidden",
-                background: "#8f9e63",
                 boxShadow: "0 20px 50px rgba(28,32,24,0.15)",
               }}
             >
-              <div
-                style={{
-                  position: "absolute",
-                  inset: 0,
-                  background: "linear-gradient(135deg, #3f4a2c, #6b7a44)",
-                  opacity: 0.9,
-                }}
-              />
               <svg
-                viewBox="0 0 400 300"
-                style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}
+                viewBox="-42 -42 84 84"
+                style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", display: "block", border: "1px solid #e8e4d4", background: "#f7f2e3" }}
+                aria-label="Zone d'intervention : Dijon et 30 km alentours"
               >
-                <path d="M 0 180 Q 100 160 200 180 T 400 200" stroke="rgba(255,255,255,0.15)" strokeWidth="2" fill="none" />
-                <path d="M 100 0 Q 120 80 200 150 T 280 300" stroke="rgba(255,255,255,0.12)" strokeWidth="2" fill="none" />
-                <path d="M 50 250 Q 150 200 250 230 T 400 100" stroke="rgba(255,255,255,0.1)" strokeWidth="1.5" fill="none" />
-                <circle cx="200" cy="170" r="105" stroke="rgba(255,255,255,0.6)" strokeWidth="2" strokeDasharray="6 4" fill="rgba(143,158,99,0.18)" />
-                <circle cx="200" cy="170" r="14" fill="#fbfaf4" />
-                <circle cx="200" cy="170" r="6" fill="#6b7a44" />
+                {/* Background */}
+                <rect x="-42" y="-36" width="90" height="74" fill="#f7f2e3" />
+
+                {/* 30km zone */}
+                <circle cx="0" cy="0" r="30" fill="none" stroke="#8f9e63" strokeWidth="0.3" strokeDasharray="2 2" strokeOpacity="0.4" />
+                <text x="22" y="-22" fontSize="1.9" fill="#8f9e63" fontWeight="600" fontFamily="system-ui, sans-serif">rayon 30 km</text>
+
+                {/* Dijon */}
+                <circle cx="0" cy="0" r="3.5" fill="rgba(143,158,99,0.2)" />
+                <circle cx="0" cy="0" r="2" fill="#8f9e63" />
+                <text x="0" y="-4" textAnchor="middle" fontSize="3.2" fontWeight="700" fill="#1c2018" fontFamily="system-ui, sans-serif">Dijon</text>
+
+                {/* Nord */}
+                <circle cx="0" cy="-27" r="1.2" fill="#6b7a44" />
+                <text x="1.8" y="-26" fontSize="1.9" fill="#4a4f3f" fontFamily="system-ui, sans-serif">Is-sur-Tille</text>
+
+                <circle cx="1" cy="-11" r="0.8" fill="#6b7a44" />
+                <text x="2.5" y="-10.2" fontSize="1.6" fill="#7a7f6b" fontFamily="system-ui, sans-serif">Ahuy</text>
+
+                {/* Nord-Est */}
+                <circle cx="14" cy="-17" r="1.2" fill="#6b7a44" />
+                <text x="15.5" y="-16.2" fontSize="1.9" fill="#4a4f3f" fontFamily="system-ui, sans-serif">Mirebeau</text>
+
+                <circle cx="5" cy="-6" r="0.8" fill="#6b7a44" />
+                <text x="6.5" y="-5.2" fontSize="1.6" fill="#7a7f6b" fontFamily="system-ui, sans-serif">St-Apollinaire</text>
+
+                {/* Est */}
+                <circle cx="29" cy="0" r="1.2" fill="#6b7a44" />
+                <text x="30.5" y="0.8" fontSize="1.9" fill="#4a4f3f" fontFamily="system-ui, sans-serif">Auxonne</text>
+
+                <circle cx="17" cy="1" r="1.2" fill="#6b7a44" />
+                <text x="18.5" y="1.8" fontSize="1.9" fill="#4a4f3f" fontFamily="system-ui, sans-serif">Genlis</text>
+
+                <circle cx="7" cy="2" r="0.8" fill="#6b7a44" />
+                <text x="8.5" y="2.8" fontSize="1.6" fill="#7a7f6b" fontFamily="system-ui, sans-serif">Quetigny</text>
+
+                {/* Sud-Est */}
+                <circle cx="22" cy="11" r="1.2" fill="#6b7a44" />
+                <text x="23.5" y="11.8" fontSize="1.9" fill="#4a4f3f" fontFamily="system-ui, sans-serif">Brazey</text>
+
+                <circle cx="3" cy="5" r="0.8" fill="#6b7a44" />
+                <text x="4.5" y="5.8" fontSize="1.6" fill="#7a7f6b" fontFamily="system-ui, sans-serif">Longvic</text>
+
+                {/* Sud */}
+                <circle cx="2" cy="14" r="1.2" fill="#6b7a44" />
+                <text x="3.5" y="14.8" fontSize="1.9" fill="#4a4f3f" fontFamily="system-ui, sans-serif">Gevrey-Chbtn.</text>
+
+                <circle cx="1" cy="22" r="1.2" fill="#6b7a44" />
+                <text x="2.5" y="22.8" fontSize="1.9" fill="#4a4f3f" fontFamily="system-ui, sans-serif">Nuits-St-G.</text>
+
+                <circle cx="0" cy="9" r="0.8" fill="#6b7a44" />
+                <text x="-1.5" y="10" textAnchor="end" fontSize="1.6" fill="#7a7f6b" fontFamily="system-ui, sans-serif">Marsannay</text>
+
+                <circle cx="-2" cy="6" r="0.8" fill="#6b7a44" />
+                <text x="-3.5" y="7" textAnchor="end" fontSize="1.6" fill="#7a7f6b" fontFamily="system-ui, sans-serif">Chenôve</text>
+
+                {/* Nord-Ouest */}
+                <circle cx="-9" cy="-10" r="1.2" fill="#6b7a44" />
+                <text x="-10.5" y="-9.2" textAnchor="end" fontSize="1.9" fill="#4a4f3f" fontFamily="system-ui, sans-serif">Norges</text>
+
+                <circle cx="-15" cy="-20" r="1.2" fill="#6b7a44" />
+                <text x="-16.5" y="-19.2" textAnchor="end" fontSize="1.9" fill="#4a4f3f" fontFamily="system-ui, sans-serif">Vitteaux</text>
+
+                {/* Ouest */}
+                <circle cx="-6" cy="-4" r="0.8" fill="#6b7a44" />
+                <text x="-7.5" y="-3.2" textAnchor="end" fontSize="1.6" fill="#7a7f6b" fontFamily="system-ui, sans-serif">Hauteville</text>
+
+                <circle cx="-8" cy="3" r="1.2" fill="#6b7a44" />
+                <text x="-9.5" y="3.8" textAnchor="end" fontSize="1.9" fill="#4a4f3f" fontFamily="system-ui, sans-serif">Plombières</text>
+
+                <circle cx="-22" cy="0" r="1.2" fill="#6b7a44" />
+                <text x="-23.5" y="0.8" textAnchor="end" fontSize="1.9" fill="#4a4f3f" fontFamily="system-ui, sans-serif">Sombernon</text>
+
+                {/* Sud-Ouest */}
+                <circle cx="-18" cy="22" r="1.2" fill="#6b7a44" />
+                <text x="-19.5" y="22.8" textAnchor="end" fontSize="1.9" fill="#4a4f3f" fontFamily="system-ui, sans-serif">Bligny-s-O.</text>
               </svg>
-              <div
-                style={{
-                  position: "absolute",
-                  top: 24,
-                  left: 24,
-                  background: "rgba(255,255,255,0.95)",
-                  padding: "8px 14px",
-                  borderRadius: 12,
-                  fontFamily: "var(--font-manrope), system-ui, sans-serif",
-                  fontSize: 11,
-                  color: "#1c2018",
-                  fontWeight: 700,
-                  letterSpacing: "0.1em",
-                  textTransform: "uppercase",
-                }}
-              >
-                Carte indicative
-              </div>
-              <div
-                style={{
-                  position: "absolute",
-                  bottom: 24,
-                  right: 24,
-                  background: "#fbfaf4",
-                  color: "#1c2018",
-                  padding: "10px 16px",
-                  borderRadius: 14,
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: 2,
-                  boxShadow: "0 6px 14px rgba(0,0,0,0.18)",
-                }}
-              >
-                <div
-                  style={{
-                    fontFamily: "var(--font-quicksand), system-ui, sans-serif",
-                    fontWeight: 700,
-                    fontSize: 22,
-                    lineHeight: 1,
-                    color: "#6b7a44",
-                  }}
-                >
-                  30 km
-                </div>
-                <div
-                  style={{
-                    fontFamily: "var(--font-manrope), system-ui, sans-serif",
-                    fontSize: 11,
-                    opacity: 0.7,
-                    letterSpacing: "0.1em",
-                    textTransform: "uppercase",
-                  }}
-                >
-                  Rayon
-                </div>
-              </div>
-              <div
-                style={{
-                  position: "absolute",
-                  top: "38%",
-                  left: "46%",
-                  transform: "translate(0, -36px)",
-                  background: "#fbfaf4",
-                  color: "#1c2018",
-                  padding: "6px 12px",
-                  borderRadius: 999,
-                  fontFamily: "var(--font-quicksand), system-ui, sans-serif",
-                  fontWeight: 700,
-                  fontSize: 13,
-                  boxShadow: "0 6px 14px rgba(0,0,0,0.18)",
-                }}
-              >
-                Dijon
-              </div>
             </div>
           </div>
         </div>
@@ -325,8 +288,8 @@ export default function ContactPage() {
           style={{
             maxWidth: 800,
             margin: "0 auto",
-            background: "#8f9e63",
-            color: "#fbfaf4",
+            background: "#f1ecdc",
+            color: "#1c2018",
             borderRadius: 32,
             padding: "52px 56px",
             textAlign: "center",

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { useForm, useFieldArray } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -10,11 +11,11 @@ const schema = z.object({
   phone: z.string().regex(/^(?:\+33|0)[1-9](?:\d{8})$/, "Numéro de téléphone invalide"),
   email: z.string().email("Email invalide"),
   address: z.string().min(5, "Adresse requise"),
-  dogName: z.string().optional(),
-  dogBreed: z.string().optional(),
-  dogAge: z.string().optional(),
-  dogSex: z.enum(["male", "female"]).optional(),
-  dogNeutered: z.boolean().optional(),
+  dogName: z.string().min(1, "Nom du chien requis"),
+  dogBreed: z.string().min(1, "Race requise"),
+  dogAge: z.string().min(1, "Âge requis"),
+  dogSex: z.enum(["male", "female"], { error: "Sexe requis" }),
+  dogNeutered: z.boolean(),
   servicesInterest: z.array(z.enum(["chiot", "pre-adoption", "reeducation", "renforcement-lien", "autre"])).min(1, "Sélectionnez au moins un service"),
   description: z.string().min(30, "Décrivez votre situation en au moins 30 caractères"),
   availability: z.array(z.object({
@@ -158,7 +159,9 @@ export default function ContactForm() {
             color: "#fbfaf4",
           }}
         >
-          <div style={{ fontSize: 48, marginBottom: 16 }}>🐾</div>
+          <div style={{ width: 192, height: 192, margin: "0 auto 16px" }}>
+            <Image src="/logo-novalien.png" alt="Nova Lien" width={192} height={192} style={{ width: "100%", height: "100%", objectFit: "contain", display: "block" }} />
+          </div>
           <h2
             style={{
               fontFamily: "var(--font-quicksand), system-ui, sans-serif",
@@ -178,7 +181,7 @@ export default function ContactForm() {
               margin: 0,
             }}
           >
-            Merci pour votre message. Amandine vous répondra dans les meilleurs délais,
+            Merci pour votre message. Je vous répondrais dans les meilleurs délais,
             généralement sous 48h.
           </p>
         </div>
@@ -221,7 +224,7 @@ export default function ContactForm() {
           >
             Parlez-moi de vous
             <br />
-            <span style={{ color: "#6b7a44", fontFamily: "var(--font-lora), Georgia, serif", fontStyle: "italic", fontWeight: 500 }}>
+            <span style={{ color: "#6b7a44" }}>
               et de votre chien.
             </span>
           </h2>
@@ -274,24 +277,28 @@ export default function ContactForm() {
               <p style={sectionTitleStyle}>Votre chien</p>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
                 <div>
-                  <label style={labelStyle}>Nom du chien</label>
+                  <label style={labelStyle}>Nom du chien *</label>
                   <input {...register("dogName")} placeholder="Rex" style={inputStyle} />
+                  {errors.dogName && <p style={errorStyle}>{errors.dogName.message}</p>}
                 </div>
                 <div>
-                  <label style={labelStyle}>Race</label>
+                  <label style={labelStyle}>Race *</label>
                   <input {...register("dogBreed")} placeholder="Berger Australien" style={inputStyle} />
+                  {errors.dogBreed && <p style={errorStyle}>{errors.dogBreed.message}</p>}
                 </div>
                 <div>
-                  <label style={labelStyle}>Âge</label>
+                  <label style={labelStyle}>Âge *</label>
                   <input {...register("dogAge")} placeholder="2 ans" style={inputStyle} />
+                  {errors.dogAge && <p style={errorStyle}>{errors.dogAge.message}</p>}
                 </div>
                 <div>
-                  <label style={labelStyle}>Sexe</label>
-                  <select {...register("dogSex")} style={inputStyle}>
-                    <option value="">— Sélectionner —</option>
+                  <label style={labelStyle}>Sexe *</label>
+                  <select {...register("dogSex")} defaultValue="" style={inputStyle}>
+                    <option value="" disabled>Sélectionner</option>
                     <option value="male">Mâle</option>
                     <option value="female">Femelle</option>
                   </select>
+                  {errors.dogSex && <p style={errorStyle}>{errors.dogSex.message}</p>}
                 </div>
               </div>
               <div style={{ marginTop: 20 }}>
@@ -355,7 +362,7 @@ export default function ContactForm() {
                       letterSpacing: "0.04em",
                     }}
                   >
-                    Décrivez-moi la situation, même imparfaitement — il n&apos;y a pas de mauvaise façon de raconter.
+                    Décrivez-moi la situation, même imparfaitement, il n&apos;y a pas de mauvaise façon de raconter.
                     Quelques pistes pour vous guider :
                   </div>
                   <ul

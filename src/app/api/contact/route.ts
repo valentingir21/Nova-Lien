@@ -7,14 +7,14 @@ const schema = z.object({
   phone: z.string(),
   email: z.string().email(),
   address: z.string().min(2),
-  dogName: z.string().optional(),
-  dogBreed: z.string().optional(),
-  dogAge: z.string().optional(),
-  dogSex: z.enum(["male", "female"]).optional(),
-  dogNeutered: z.boolean().optional(),
+  dogName: z.string().min(1),
+  dogBreed: z.string().min(1),
+  dogAge: z.string().min(1),
+  dogSex: z.enum(["male", "female"]),
+  dogNeutered: z.boolean(),
   servicesInterest: z.array(z.string()).min(1),
   description: z.string().min(30),
-  availability: z.array(z.object({ date: z.string(), timeOfDay: z.string() })).min(1),
+  availability: z.array(z.object({ date: z.string().min(1), timeOfDay: z.string() })).min(5),
   rgpdConsent: z.literal(true),
 });
 
@@ -52,7 +52,7 @@ export async function POST(req: NextRequest) {
   const d = parsed.data;
 
   const availabilityRows = d.availability
-    .map((a) => `<li>${a.date} — ${timeLabels[a.timeOfDay] ?? a.timeOfDay}</li>`)
+    .map((a) => `<li>${a.date} · ${timeLabels[a.timeOfDay] ?? a.timeOfDay}</li>`)
     .join("");
 
   const servicesRows = d.servicesInterest
@@ -65,7 +65,7 @@ export async function POST(req: NextRequest) {
 <head><meta charset="utf-8"/></head>
 <body style="font-family: sans-serif; color: #1c2018; max-width: 640px; margin: 0 auto; padding: 24px;">
   <div style="background:#8f9e63; color:#fbfaf4; padding:16px 24px; border-radius:12px; margin-bottom:24px;">
-    <strong style="font-size:18px;">Nouvelle demande de contact — Nova Lien</strong>
+    <strong style="font-size:18px;">Nouvelle demande de contact · Nova Lien</strong>
   </div>
 
   <h2 style="font-size:16px; margin-bottom:4px;">Coordonnées</h2>
@@ -78,10 +78,10 @@ export async function POST(req: NextRequest) {
 
   <h2 style="font-size:16px; margin-bottom:4px;">Le chien</h2>
   <table style="width:100%; border-collapse:collapse; margin-bottom:24px;">
-    <tr><td style="padding:6px 0; color:#7a7f6b; width:140px;">Nom</td><td>${d.dogName || "—"}</td></tr>
-    <tr><td style="padding:6px 0; color:#7a7f6b;">Race</td><td>${d.dogBreed || "—"}</td></tr>
-    <tr><td style="padding:6px 0; color:#7a7f6b;">Âge</td><td>${d.dogAge || "—"}</td></tr>
-    <tr><td style="padding:6px 0; color:#7a7f6b;">Sexe</td><td>${d.dogSex === "male" ? "Mâle" : d.dogSex === "female" ? "Femelle" : "—"}</td></tr>
+    <tr><td style="padding:6px 0; color:#7a7f6b; width:140px;">Nom</td><td>${d.dogName}</td></tr>
+    <tr><td style="padding:6px 0; color:#7a7f6b;">Race</td><td>${d.dogBreed}</td></tr>
+    <tr><td style="padding:6px 0; color:#7a7f6b;">Âge</td><td>${d.dogAge}</td></tr>
+    <tr><td style="padding:6px 0; color:#7a7f6b;">Sexe</td><td>${d.dogSex === "male" ? "Mâle" : "Femelle"}</td></tr>
     <tr><td style="padding:6px 0; color:#7a7f6b;">Stérilisé(e)</td><td>${d.dogNeutered ? "Oui" : "Non"}</td></tr>
   </table>
 
@@ -131,13 +131,13 @@ export async function POST(req: NextRequest) {
         from: "Nova Lien <contact@novalien.fr>",
         to: "amandine.novalien@gmail.com",
         replyTo: d.email,
-        subject: `Nouvelle demande — ${d.fullName} (${d.address})`,
+        subject: `Nouvelle demande de ${d.fullName} (${d.address})`,
         html: toAmandine,
       }),
       resend.emails.send({
         from: "Amandine · Nova Lien <contact@novalien.fr>",
         to: d.email,
-        subject: "Votre demande a bien été reçue — Nova Lien",
+        subject: "Votre demande a bien été reçue · Nova Lien",
         html: toClient,
       }),
     ]);
